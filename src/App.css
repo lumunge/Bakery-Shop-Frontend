@@ -186,7 +186,7 @@ header{
 .navLink:hover{
   color: var(--primaryColor);
   text-decoration: none;
-  transition: all .5s ease;
+  transition: all .5s ease-out;
 }
 
 
