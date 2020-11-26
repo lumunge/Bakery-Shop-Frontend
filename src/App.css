@@ -186,7 +186,7 @@ header{
 .navLink:hover{
   color: var(--primaryColor);
   text-decoration: none;
-  transition: all .5s ease;
+  transition: all .5s ease-out;
 }
 
 
@@ -211,7 +211,7 @@ header{
   color: var(--mainWhite);
   padding: 1rem;
   border-radius: 4px;
-  border: 1px solid #000;
+  border: 1px solid #000000;
 }
 .learnBtn:hover{
   color: var(--mainWhite);
