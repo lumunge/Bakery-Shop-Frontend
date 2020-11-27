@@ -5,17 +5,17 @@ export const MenuLinks = [
         cName: 'navLink'
     },
     {
-        title: 'Cakes & Confectionaries',
+        title: 'Cakes',
         path: '/cakes-&-confectionaries',
         cName: 'navLink'
     },
     {
-        title: 'About Us',
+        title: 'About',
         path: '/about',
         cName: 'navLink'
     },
     {
-        title: 'Contacts',
+        title: 'Contact',
         path: '/contact',
         cName: 'navLink'
     }
