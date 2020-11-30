@@ -460,6 +460,7 @@ header{
 
 /* FOOTER STYLING */
 footer{
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   background-color: var(--mainBlack);

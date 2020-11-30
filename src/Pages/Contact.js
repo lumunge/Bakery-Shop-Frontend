@@ -1,9 +1,10 @@
 import React from 'react';
 import Menu from '../Components/Menu';
+import Footer from '../Components/Footer';
 
 export default function Contact(){
     return(
-        <div className="contact">
+        <div>
             <Menu />
             <br/>
             <br/>
@@ -55,6 +56,10 @@ export default function Contact(){
                     </div>
                 </div>
             </div>
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <br /><br />
+            <h1>The Map will Be Here</h1>
+            <Footer/>
         </div>
     );
 }
