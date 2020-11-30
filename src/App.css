@@ -452,8 +452,13 @@ header{
   bottom: 40px;
 }
 .social a{
+  color: var(--mainBlack);
   font-size: 2rem;
   padding-left: 1rem;
+}
+.social a:hover{
+  color: var(--mainGrey);
+  transition: var(--transitionAll);
 }
 
 /* END CONTACT FORM STYLING */
@@ -517,5 +522,10 @@ footer{
     }
     .menuNav .navItem:nth-child(4){
       transition-delay: 0.4s;
+    }
+    .contactContainer{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
     }
 }
