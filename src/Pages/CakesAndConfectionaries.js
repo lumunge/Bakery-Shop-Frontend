@@ -4,6 +4,7 @@ import Products from '../Components/Products';
 import data from '../data.json';
 import Cart from '../Components/Cart';
 import '../App.css';
+import Footer from '../Components/Footer';
 
 export default class CakesAndConfectionaries extends Component {
     constructor(){
@@ -56,6 +57,7 @@ export default class CakesAndConfectionaries extends Component {
                     cartItems = {this.state.cartItems}
                     removeFromCart = {this.state.removeFromCart}
                 />
+                <Footer />
             </div>
         )
     }

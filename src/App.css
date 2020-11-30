@@ -429,6 +429,31 @@ header{
   padding: 1rem 0 1rem 0;
 } */
 /* END CONTACT FORM STYLING */
+
+/* FOOTER STYLING */
+footer{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--mainBlack);
+  padding: 2rem;
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer a{
+  color: var(--primaryColor);
+  font-size: 1.2rem;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+}
+.footer a:hover{
+  transition: var(--transitionAll);
+}
+/* FOOTER STYLING */
+
 @media (max-width:961px)  { 
     .menuBtn{
       display: block;
@@ -463,5 +488,10 @@ header{
     }
     .menuNav .navItem:nth-child(4){
       transition-delay: 0.4s;
+    }
+    footer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 }
