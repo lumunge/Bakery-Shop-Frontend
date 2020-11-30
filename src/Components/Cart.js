@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import formatCurrency from './utils';
 import Fade from 'react-reveal/Fade';
+import onClickOutside from 'react-onclickoutside';
 import '../App.css';
 
-export default class Cart extends Component {
+class Cart extends Component {
     constructor(props){
         super(props);
         this.state = {
             name: "",
             email: "",
             address: "",
-            showCheckout: false,   
+            cartItems: [], 
+            showCheckout: false,  
             showCart: false,         
         };
     }
@@ -27,11 +29,22 @@ export default class Cart extends Component {
             showCart: !this.state.showCart
         });
     }
+
+    removeFromCart = (product) => {
+        const cartItems = this.state.cartItems.slice();
+        this.setState({
+            cartItems: cartItems.filter((x) => x._id !== product.id),
+        });
+    }
    
     render() {
         const {cartItems} = this.props;
         const {showCart} = this.state;
-
+        Cart.handleClickOutside = () => {
+            this.setState({
+                showCart: false
+            });
+        }
         return (
             <div>
 
@@ -113,3 +126,10 @@ export default class Cart extends Component {
         )
     }
 }
+
+const clickOutsideConfig = {
+    handleClickOutside: () => Cart.handleClickOutside,
+
+};
+
+export default onClickOutside(Cart, clickOutsideConfig)
