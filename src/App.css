@@ -518,12 +518,4 @@ footer{
     .menuNav .navItem:nth-child(4){
       transition-delay: 0.4s;
     }
-    .cart{
-      width: 100%;
-    }
-    footer{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
 }
