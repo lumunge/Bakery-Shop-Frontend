@@ -452,8 +452,13 @@ header{
   bottom: 40px;
 }
 .social a{
+  color: var(--mainBlack);
   font-size: 2rem;
   padding-left: 1rem;
+}
+.social a:hover{
+  color: var(--mainGrey);
+  transition: var(--transitionAll);
 }
 
 /* END CONTACT FORM STYLING */
