@@ -403,6 +403,9 @@ header{
 .landing{
   height: 500px;
   background-color: var(--mainBlack);
+  display: flex;
+  align-items: center;
+  padding: 3rem;
 }
 .contactContainer{
   display: flex;
@@ -421,6 +424,25 @@ header{
   justify-content: center;
   align-items: center;
 }
+.form input{
+  border: none;
+  background-color: transparent;
+  border-bottom: .5px solid var(--mainGrey);
+  color: var(--mainBlack);
+  font-size: 18px;
+  height: 50px;
+  width: 300px;
+}
+.form input:focus{
+  outline: none;
+}
+.form input::placeholder {
+  color: var(--mainBlack);
+  font-size: 1.2rem;
+}
+.form input:focus::placeholder{
+  color: var(--mainGrey);
+}
 .form div{
   padding-top: 1rem;;
 }
@@ -430,9 +452,14 @@ header{
 }
 .fa-paper-plane{
   position: relative;
-  left: 80%;
+  left: 110%;
   bottom: 40px;
   font-size: 2rem;
+  color: var(--mainGrey);
+}
+.fa-paper-plane:hover{
+  color: var(--primaryColor);
+  transition: var(--transitionAll);
 }
 .contactInfo{
   flex-grow: 4;
@@ -527,5 +554,9 @@ footer{
       display: flex;
       flex-direction: column;
       width: 100%;
+    }
+    .social{
+      position: absolute;
+      bottom: -104px;
     }
 }

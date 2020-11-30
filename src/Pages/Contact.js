@@ -38,7 +38,7 @@ export default function Contact(){
                         <input type="email" placeholder="Email Address..." />
                         </div>
                         <div>
-                            <textarea rows="5" placeholder="You message here.."></textarea>
+                            <textarea rows="5" cols="28" placeholder="You message here.."></textarea>
                         </div>
                         <a href="#!"><i class="fas fa-paper-plane"></i></a>
                     </form>
@@ -57,8 +57,10 @@ export default function Contact(){
                 </div>
             </div>
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            <br /><br />
-            <h1>The Map will Be Here</h1>
+            <br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <div className="mapper">
+                <h1>You Can Vist Us At</h1>
+            </div>
             <Footer/>
         </div>
     );
