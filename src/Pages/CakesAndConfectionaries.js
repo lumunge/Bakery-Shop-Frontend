@@ -4,6 +4,7 @@ import Products from '../Components/Products';
 import data from '../data.json';
 import Cart from '../Components/Cart';
 import '../App.css';
+import Footer from '../Components/Footer';
 
 export default class CakesAndConfectionaries extends Component {
     constructor(){
@@ -35,7 +36,6 @@ export default class CakesAndConfectionaries extends Component {
           cartItems.push({...product, count: 1});
         }
         this.setState({cartItems});
-        this.setState({showCart: true});
       };      
 
     render() {
@@ -52,10 +52,11 @@ export default class CakesAndConfectionaries extends Component {
                 products = {this.state.products}
                 addToCart = {this.addToCart}
             />
-                <Cart
-                    cartItems = {this.state.cartItems}
-                    removeFromCart = {this.state.removeFromCart}
-                />
+            <Cart
+                cartItems = {this.state.cartItems}
+                removeFromCart = {this.removeFromCart}
+            />
+                <Footer />
             </div>
         )
     }
