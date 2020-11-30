@@ -400,34 +400,62 @@ header{
 }
 
 /* CONTACT FROM STYLING */
- .contact{
+.landing{
+  height: 500px;
+  background-color: var(--mainBlack);
+}
+.contactContainer{
   display: flex;
-  flex-direction: row;
+  position: absolute;
+  top: 500px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  height: 500px;
+  width: 1120px;
+}
+.form{
+  flex-grow: 8;
+  background-color: var(--mainWhite);
+  display: flex;
   justify-content: center;
-} 
-.illustration{
-  margin-right: 2rem;
+  align-items: center;
 }
-.contactTitle{
-  text-align: center;
-  color: var(--mainWhite);
+.form div{
+  padding-top: 1rem;;
 }
-.contactForm input,
-.contactForm textarea{
-  border: none;
-  text-align: center;
-  padding: .7rem;
+.form h1{
+  color: var(--mainBlack);
+  padding-top: .6rem;
 }
-.contactForm form{
-  border: .5px solid var(--primaryColor);
-  padding: 2rem;
-  /* display: flex;
-  flex-direction: column; */
+.fa-paper-plane{
+  position: relative;
+  left: 80%;
+  bottom: 40px;
+  font-size: 2rem;
 }
-/* 
-.contactForm div{
-  padding: 1rem 0 1rem 0;
-} */
+.contactInfo{
+  flex-grow: 4;
+  background-color: var(--primaryColor);
+}
+.details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.details p{
+  font-size: 1.5rem;
+}
+.social{
+  position: absolute;
+  bottom: 40px;
+}
+.social a{
+  font-size: 2rem;
+  padding-left: 1rem;
+}
+
 /* END CONTACT FORM STYLING */
 @media (max-width:961px)  { 
     .menuBtn{
