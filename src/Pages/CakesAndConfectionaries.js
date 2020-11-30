@@ -36,7 +36,6 @@ export default class CakesAndConfectionaries extends Component {
           cartItems.push({...product, count: 1});
         }
         this.setState({cartItems});
-        this.setState({showCart: true});
       };      
 
     render() {
@@ -53,10 +52,10 @@ export default class CakesAndConfectionaries extends Component {
                 products = {this.state.products}
                 addToCart = {this.addToCart}
             />
-                <Cart
-                    cartItems = {this.state.cartItems}
-                    removeFromCart = {this.state.removeFromCart}
-                />
+            <Cart
+                cartItems = {this.state.cartItems}
+                removeFromCart = {this.removeFromCart}
+            />
                 <Footer />
             </div>
         )

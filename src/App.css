@@ -335,7 +335,7 @@ header{
   position: fixed;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 30%;
   height: 100%;
   overflow: scroll;
   z-index: 3;
@@ -488,6 +488,9 @@ footer{
     }
     .menuNav .navItem:nth-child(4){
       transition-delay: 0.4s;
+    }
+    .cart{
+      width: 100%;
     }
     footer{
       display: flex;
