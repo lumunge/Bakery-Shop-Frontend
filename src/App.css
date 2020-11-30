@@ -523,4 +523,9 @@ footer{
     .menuNav .navItem:nth-child(4){
       transition-delay: 0.4s;
     }
+    .contactContainer{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
 }
