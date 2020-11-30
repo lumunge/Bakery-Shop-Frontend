@@ -400,25 +400,31 @@ header{
 }
 
 /* CONTACT FROM STYLING */
- /* .contact{
+ .contact{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  text-align: center;
+  justify-content: center;
+} 
+.illustration{
+  margin-right: 2rem;
 }
 .contactTitle{
   text-align: center;
-  color: var(--primaryColor);
-  padding: 2rem;
-} */
-.clear{
-  clear: initial;
+  color: var(--mainWhite);
 }
-/* .contactForm input,
+.contactForm input,
 .contactForm textarea{
-  border: .5px solid var(--primaryColor);
-  padding: 1rem;
+  border: none;
+  text-align: center;
+  padding: .7rem;
 }
+.contactForm form{
+  border: .5px solid var(--primaryColor);
+  padding: 2rem;
+  /* display: flex;
+  flex-direction: column; */
+}
+/* 
 .contactForm div{
   padding: 1rem 0 1rem 0;
 } */
