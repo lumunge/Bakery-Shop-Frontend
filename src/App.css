@@ -490,6 +490,50 @@ header{
 
 /* END CONTACT FORM STYLING */
 
+/* MODAL STYLING */
+.productDetails{
+  position: absolute;
+  top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.productDetails img{
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+.productDetailsDesc{
+  flex: 1 1;
+  margin: 1rem;
+}
+.modalbutton{
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background-color: var(--primaryColor);
+  color: var(--mainWhite);
+  border: .5px solid var(--primaryColor);
+  transition: var(--transitionAll);
+  cursor: pointer;
+  text-decoration: none;
+
+}
+.modalbutton:hover{
+  text-decoration: none;
+  color: var(--mainWhite);
+  background: transparent;
+
+}
+.closemodal{
+  position: absolute;
+  right: 1rem;
+  top: 2.5rem;
+  z-index: 1000;
+  padding: 1rem;
+}
+/* END MODALL STYLING */
+
 /* FOOTER STYLING */
 footer{
   width: 100%;
