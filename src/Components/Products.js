@@ -2,11 +2,47 @@ import React, { Component } from 'react';
 import formarCurrency from './utils';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
-// import Modal from 'react-modal';
+import Modal from 'react-modal';
 import '../App.css';
 
+const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      width: '700px',
+      height: '500px',
+      color: 'var(--mainWhite)',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)',
+        background                  : 'var(--mainGrey)'
+    }
+  };
+
 export default class Products extends Component {
+        constructor(props){
+            super(props);
+            this.state = {
+                product: null,
+            };
+        }
+
+        openModal = (product) => {
+            this.setState({
+                product
+            });
+        }
+
+        closeModal = () => {
+            this.setState({
+                product: null
+            });
+        }
+
        render() {
+        const { product } = this.state;
+
         return (
             <div>
                 <div className="products">
@@ -16,7 +52,9 @@ export default class Products extends Component {
                         <Fade bottom cascade>
                             <article key={product._id} class="product">
                                 <div className="imgContainer">
+                                    <a href={"#" + product._id} onClick={() => this.openModal(product)}>
                                     <img src={product.image} alt="" class="productImg" />
+                                    </a>
                                     <button className="bagBtn" data-id={product.id} onClick={() => this.props.addToCart(product)}>
                                         <i class="fas fa-shopping-cart"></i>
                                             Add to Basket
@@ -28,6 +66,31 @@ export default class Products extends Component {
                             </Fade>
                         ))}
                 </div>
+                {product && (
+                    <Modal isOpen={true} style={customStyles} onRequestClose={this.closeModal}>
+                        <Zoom>
+                            <button className="closemodal" onClick={this.closeModal}>X</button>
+                            <div className="productDetails">
+                                <img src={product.image} alt={product.title} />
+                                <div className="productDetailsDesc">
+                                    <p>
+                                        <strong>{product.title}</strong>
+                                    </p>
+                                    <p>{product.description}</p>
+                                    <div className="productPrice">
+                                        <div>{formarCurrency(product.price)}</div>
+                                        
+                                    </div>
+                                    <button className="modalbutton"
+                                        onClick={() => {
+                                            this.props.addToCart(product);
+                                            this.closeModal();
+                                        }}>Add to Basket</button>
+                                </div>
+                            </div>  
+                        </Zoom>
+                    </Modal>
+                )}
             </div>
             </div>
         )
