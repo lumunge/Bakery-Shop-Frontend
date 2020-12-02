@@ -97,9 +97,15 @@ class Cart extends Component {
                                 </div>
                                 <div>
                                 <div className="itemTitle">{item.title}</div>
-                                <div className="right">
-                                <div className="money">{formatCurrency(item.price)} x { item.count }{" "}</div>
-                                <button className="button remove" onClick={() => this.props.removeFromCart(item)}>Remove </button>
+                                <div className="right">                          
+                                <div className="money">{formatCurrency(item.price)} x 
+                                <div className="counter">
+                                <a href="#!" data-id={item.id} onClick={() => this.props.addToCart(item)}><i class="fas fa-chevron-up"></i></a>
+                                <p class="">{ item.count }</p>
+                                <a href="#!" data-id={item.id} onClick={() => this.props.decreaseCart(item)}><i class="fas fa-chevron-down"></i></a> 
+                                </div>
+                                </div>
+                                <button className="button remove" onClick={() => this.props.removeFromCart(item)}>X</button>
                                 </div>
                                 </div>
                             </li>
