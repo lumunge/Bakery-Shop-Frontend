@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Components/Footer';
 import Menu from '../Components/Menu';
 
 export default function About(){
@@ -99,6 +100,7 @@ export default function About(){
         </div>
 
         </div>
+        <Footer/>
         </div>
     );
 }
