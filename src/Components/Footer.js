@@ -16,7 +16,7 @@ export default class Footer extends Component {
                     <div className="footerCol">
                         <h2>Social</h2>
                         <a href="#!">Instagram</a>
-                        <a href="#!">Facebook</a>
+                        <a href="https://www.facebook.com/CremeofCakes/">Facebook</a>
                     </div>
                     <div className="footerCol">
                         <h2>Legal</h2>
@@ -29,6 +29,10 @@ export default class Footer extends Component {
                     </div>
                     <div className="copy">
                         <p>All Rights Reserved &copy; 2020 cremecakes.com.</p>
+                    </div>
+                    <div className="directions">
+                    <p>You can find us here </p>
+                    <i class="fas fa-chevron-down"></i>
                     </div>
                 </footer>
         );

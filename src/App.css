@@ -507,6 +507,12 @@ header{
   color: var(--mainGrey);
   transition: var(--transitionAll);
 }
+.directions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 /* END CONTACT FORM STYLING */
 
@@ -642,6 +648,10 @@ header{
   color: var(--mainBlack);
   background: transparent;
 
+}
+.mapContainer{
+  width: 100%;
+  height: 453px;
 }
 
 /* END ABOUT STYLING */
