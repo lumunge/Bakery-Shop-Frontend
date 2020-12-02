@@ -29,6 +29,22 @@ export default class CakesAndConfectionaries extends Component {
         });
     };
 
+    decreaseCart = (product) => {
+        const cartItems = this.state.cartItems.slice();
+        let alreadyInCart = false;
+        cartItems.forEach((item) => {
+          if(item._id === product._id){
+            item.count--;
+            alreadyInCart = true;
+          }
+        });
+        if(!alreadyInCart){
+          cartItems.pop({...product, count: 0});
+          this.removeFromCart(product);
+        }
+        this.setState({cartItems});
+      }; 
+
     addToCart = (product) => {
         const cartItems = this.state.cartItems.slice();
         let alreadyInCart = false;
@@ -59,6 +75,8 @@ export default class CakesAndConfectionaries extends Component {
                 addToCart = {this.addToCart}
             />
             <Cart
+            addToCart = {this.addToCart}
+                decreaseCart = {this.decreaseCart}
                 cartItems = {this.state.cartItems}
                 removeFromCart = {this.removeFromCart}
                 createOrder = {this.createOrder}
