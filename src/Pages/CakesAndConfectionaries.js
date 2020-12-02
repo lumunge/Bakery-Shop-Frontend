@@ -11,8 +11,14 @@ export default class CakesAndConfectionaries extends Component {
         super();
         this.state = {
             products: data.products,
-            cartItems: [],
+            cartItems: localStorage.getItem("cartItems")
+            ? JSON.parse(localStorage.getItem("cartItems"))
+            : [],
     }
+    }
+
+    createOrder = (order) => {
+        alert("Need to save data to database " + order.name);
     }
 
 
@@ -55,6 +61,7 @@ export default class CakesAndConfectionaries extends Component {
             <Cart
                 cartItems = {this.state.cartItems}
                 removeFromCart = {this.removeFromCart}
+                createOrder = {this.createOrder}
             />
                 <Footer />
             </div>

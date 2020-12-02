@@ -321,7 +321,7 @@ header{
   margin-right: 0.5rem;
 }
 .cartOverlay{
-  /* position: relative;
+  /* position: fixed;
   top: 0;
   right: 0;
   width: 100%;
@@ -395,10 +395,18 @@ header{
   color: var(--mainBlack);
   font-size: 2rem;
 }
+.remove{
+  margin-left: 2rem;
+}
 .cartFooter{
   padding: 1rem;
 }
-
+.checkOutForm{
+  padding: 3rem 0 3rem 0;
+}
+.checkOutForm h4{
+  color: var(--mainBlack);
+}
 /* CONTACT FROM STYLING */
 .landing{
   height: 500px;
@@ -424,7 +432,9 @@ header{
   justify-content: center;
   align-items: center;
 }
+.formContainer li input,
 .form input{
+  text-align: center;
   border: none;
   background-color: transparent;
   border-bottom: .5px solid var(--mainGrey);

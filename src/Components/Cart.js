@@ -10,12 +10,29 @@ class Cart extends Component {
         this.state = {
             name: "",
             email: "",
-            address: "",
+            phone: "",
             cartItems: [], 
             showCheckout: false,  
             showCart: false,         
         };
     }
+
+    handleForm = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
+    createOrder = (e) => {
+        e.preventDefault();
+        const order = {
+            name: this.state.name,
+            email: this.state.email,
+            phone: this.state.phone,
+            cartItems: this.state.cartItems,
+        };
+        this.props.createOrder(order);
+    };
 
     showCheckout = () => {
         this.setState({
@@ -82,7 +99,7 @@ class Cart extends Component {
                                 <div className="itemTitle">{item.title}</div>
                                 <div className="right">
                                 <div className="money">{formatCurrency(item.price)} x { item.count }{" "}</div>
-                                <button className="button" onClick={() => this.props.removeFromCart(item)}>Remove </button>
+                                <button className="button remove" onClick={() => this.props.removeFromCart(item)}>Remove </button>
                                 </div>
                                 </div>
                             </li>
@@ -101,14 +118,19 @@ class Cart extends Component {
             {this.state.showCheckout && (
                 <Fade right cascade>
                     <div className="checkOutForm">
-                        <form>
+                        <h4>Please Fill Out the Form Below</h4>
+                        <form onSubmit={this.createOrder}>
                             <ul className="formContainer">
-                                <li>
-                                    <input type="email" required placeholder="Email" onChange={this.handleForm} />
+                            <li>
+                                    <input type="text" name="name" required placeholder="Your Name..." onChange={this.handleForm} />
                                 </li>
                                 <li>
-                                    <input type="text" required placeholder="Full Names" onChange={this.handleForm} />
+                                    <input type="email" name="email" required placeholder="Email Address..." onChange={this.handleForm} />
                                 </li>
+                                <li>
+                                    <input type="number" name="phone" required placeholder="Phone Number..." onChange={this.handleForm} />
+                                </li>
+                                <br/>
                                 <li>
                                     <button type="submit" className="button">CheckOut</button>
                                 </li>
