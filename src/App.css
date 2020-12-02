@@ -509,6 +509,68 @@ header{
 
 /* END CONTACT FORM STYLING */
 
+/* ABOUT STYLING */
+.aboutLanding{
+  height: 500px;
+  background-image: url("./img/cakebg1.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+}
+.aboutLanding h2{
+  color: var(--mainBlack);
+  text-align: center;
+  font-weight: 800;
+  font-size: 3rem;
+  padding: 3rem;
+}
+.aboutContent{
+  background-color: var(--mainWhite);
+  color: #000;
+}
+.mainAbout{
+  background-color: var(--mainWhite);
+  color: var(--mainBlack);
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.about{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about1{
+  flex-direction: row;
+}
+.about2{
+  flex-direction: row-reverse;
+}
+.gif1,
+.gif2,
+.gif3{
+  width: 300px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50% 50% 50% 50% / 35% 70% 40% 90%;
+}
+.gif1{
+  background-image: url("./img/about1.gif");
+}
+.gif2{
+  background-image: url("./img/about2.webp");
+}
+.gif3{
+  background-image: url("./img/about3.webp");
+}
+/* END ABOUT STYLING */
+
 /* MODAL STYLING */
 .productDetails{
   position: absolute;
