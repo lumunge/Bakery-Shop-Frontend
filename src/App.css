@@ -410,10 +410,18 @@ header{
 /* CONTACT FROM STYLING */
 .landing{
   height: 500px;
-  background-color: var(--mainBlack);
+  background-image: url("./img/contact.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
-  padding: 3rem;
+}
+.landingContent{
+  display:flex;
+  background: rgba(50, 40, 30, 0.85);
+  padding: 2rem;
 }
 .contactContainer{
   display: flex;
