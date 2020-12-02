@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Menu from '../Components/Menu';
 import Footer from '../Components/Footer';
+import MapContainer from '../Components/MapContainer';
 
 
-export default function Contact(){
-    return(
-        <div>
-            <Menu />
+
+export default class Contact extends Component {
+    render() {
+        return (
+            <div>
+                <Menu />
             <br/>
             <br/>
             <br/>
@@ -50,17 +53,22 @@ export default function Contact(){
                     <p><i class="fas fa-envelope-open-text"></i> cakes@yahoo.com </p>
                     </div>
                     <div className="social">
-                        <a href="#!"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://www.facebook.com/CremeofCakes/"><i class="fab fa-facebook-square"></i></a>
                         <a href="#!"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             <br /><br /><br /><br /><br /><br /><br /><br /><br />
-            <div className="mapper">
-                <h1>You Can Vist Us At</h1>
-            </div>
+            
             <Footer/>
-        </div>
-    );
+
+            <div className="mapContainer">
+                <div className="map">
+                    <MapContainer/>
+                </div>
+            </div>
+            </div>
+        )
+    }
 }
