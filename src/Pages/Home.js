@@ -3,10 +3,11 @@ import '../App.css';
 import Footer from '../Components/Footer';
 import Menu from '../Components/Menu';
 
+
 export default function Home(){
     return(
         <div>
-        <Menu />
+        <Menu/>
         {/* <div className="overlay"></div> */}
         <div className="home">
             <h1 className="heading">Caro's <span>Cakes and Confectionaries</span></h1>

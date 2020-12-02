@@ -63,7 +63,9 @@ export default class CakesAndConfectionaries extends Component {
     render() {
         return (
             <div>
-            <Menu />
+            <Menu 
+              cartItems = {this.state.cartItems}
+            />
             <div className="hero">
                 <div className="banner">
                     <h1 className="bannerTitle">Some of our Best Sellers</h1>
@@ -75,7 +77,7 @@ export default class CakesAndConfectionaries extends Component {
                 addToCart = {this.addToCart}
             />
             <Cart
-            addToCart = {this.addToCart}
+                addToCart = {this.addToCart}
                 decreaseCart = {this.decreaseCart}
                 cartItems = {this.state.cartItems}
                 removeFromCart = {this.removeFromCart}
