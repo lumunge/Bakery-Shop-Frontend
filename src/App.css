@@ -547,25 +547,36 @@ header{
 /* FOOTER STYLING */
 footer{
   width: 100%;
-  display: flex;
-  justify-content: space-evenly;
   background-color: var(--mainBlack);
   padding: 2rem;
 }
-.footer{
+.footerMain{
+  display: flex;
+  justify-content: space-evenly;
+}
+.footerCol{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.footer a{
+.footerCol a{
   color: var(--primaryColor);
   font-size: 1.2rem;
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
   text-align: center;
 }
-.footer a:hover{
+.footerCol a:hover{
   transition: var(--transitionAll);
+}
+.copy{
+  padding: 1rem 0 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.copy p{
+  letter-spacing: var(--mainSpacing);
 }
 /* FOOTER STYLING */
 
