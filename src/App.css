@@ -407,6 +407,15 @@ header{
 .checkOutForm h4{
   color: var(--mainBlack);
 }
+.fa-chevron-up,
+.fa-chevron-down{
+  color: var(--primaryColor);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+/* END CART STYLING */
+
 /* CONTACT FROM STYLING */
 .landing{
   height: 500px;
@@ -626,6 +635,9 @@ footer{
     .contactContainer{
       display: flex;
       flex-direction: column;
+      width: 100%;
+    }
+    .cart{
       width: 100%;
     }
     .social{
