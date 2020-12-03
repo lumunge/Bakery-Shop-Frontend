@@ -4,6 +4,8 @@ import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 import Modal from 'react-modal';
 import '../App.css';
+import { connect } from 'react-redux';
+import { fetchProducts } from '../Actions/productActions'
 
 const customStyles = {
     content : {
@@ -20,12 +22,16 @@ const customStyles = {
     }
   };
 
-export default class Products extends Component {
+class Products extends Component {
         constructor(props){
             super(props);
             this.state = {
                 product: null,
             };
+        }
+
+        componentDidMount(){
+            this.props.fetchProducts();
         }
 
         openModal = (product) => {
@@ -42,14 +48,18 @@ export default class Products extends Component {
 
        render() {
         const { product } = this.state;
+        console.log(this.props.products);
 
         return (
             <div>
                 <div className="products">
                 <h2>Some Delicacies</h2>
                 <div className="production">
-                    {this.props.products.map(product => (
+                    {this.props.products.map((product) => (
                         <Fade bottom cascade>
+                            {!this.props.products ? (
+                                <div> Loading Products </div>
+                            ):(
                             <article key={product._id} class="product">
                                 <div className="imgContainer">
                                     <a href={"#" + product._id} onClick={() => this.openModal(product)}>
@@ -63,6 +73,7 @@ export default class Products extends Component {
                                 <h3>{product.title}</h3>
                                 <h4>{formarCurrency(product.price)}</h4>
                             </article>
+                            )}
                             </Fade>
                         ))}
                 </div>
@@ -96,3 +107,7 @@ export default class Products extends Component {
         )
     }
 }
+
+export default connect((state) => ({ products: state.products.filteredItems }), {
+    fetchProducts,
+})(Products);
