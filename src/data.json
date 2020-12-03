@@ -11,7 +11,7 @@
         {
             "_id": 2,
             "image": "/images/cake2.webp",
-            "title": "White Forest Cake",
+            "title": "/images/cake2.webp",
             "description": "Blended with fruits and wholesome nutrients it is a good cake for birthady parties fro kids to get nutrients in the body in a sweet way",
             "availableSizes": ["2kg", "4kg", "6kg", "10kg"],
             "price": 1800
