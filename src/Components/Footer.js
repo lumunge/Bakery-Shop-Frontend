@@ -30,10 +30,6 @@ export default class Footer extends Component {
                     <div className="copy">
                         <p>All Rights Reserved &copy; 2020 cremecakes.com.</p>
                     </div>
-                    <div className="directions">
-                    <p>You can find us here </p>
-                    <i class="fas fa-chevron-down"></i>
-                    </div>
                 </footer>
         );
     }

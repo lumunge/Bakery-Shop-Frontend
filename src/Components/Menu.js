@@ -35,6 +35,23 @@ export default class Menu extends Component {
 
     render() {
         return (
+            <div>
+
+                <div className="topNav">
+
+                <div className="branding">
+                    <a href="#!">Cakes and Confectionaries</a>
+                </div>
+
+                <div className="socialIcons">
+                    <a href="#!"><i class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.facebook.com/CremeofCakes/"><i class="fab fa-instagram-square"></i></a>
+                    <a href="#!"><i class="fas fa-envelope-square"></i></a>
+                </div>
+
+                </div>
+
+
             <header className="navbar">
 
             <div className={this.state.clicked ? "menuBtn close" : "menuBtn"} onClick={this.showMenu}>
@@ -45,9 +62,6 @@ export default class Menu extends Component {
 
                 <nav className={this.state.clicked ? "menu show" : "menu"}>
 
-                <div className="branding">
-                    <a href="#!">Cakes and Confectionaries</a>
-                </div>
                     <ul className={this.state.clicked ? "menuNav show" : "menuNav"}>
                     {MenuLinks.map((item, index) => {
                         return(                         
@@ -63,6 +77,7 @@ export default class Menu extends Component {
                 </nav>
 
             </header>
+            </div>
         );
     }
 }

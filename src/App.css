@@ -49,9 +49,46 @@ body{
 }
 
 /* NAVIGATION BAR STYLING */
+.topNav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: var(--mainBlack);
+  padding-bottom: 5rem;
+}
 header{
   position: fixed; 
   z-index: 2;
+}
+.branding,
+.socialIcons{
+  margin-top: 70px;
+  z-index: 3;
+}
+.socialIcons{
+  display: flex;
+  padding-left: 7rem;
+  background-color: var(--mainGrey);
+  
+}
+.socialIcons a{
+  color: var(--primaryColor);
+  font-size: 2rem;
+  padding-right: 3rem;
+  
+}
+.branding a{
+  color: var(--primaryColor);
+  font-size: 1.5rem;
+  padding-left: 1rem;
+  text-decoration: none;
+}
+
+.branding a:hover{
+  color: var(--mainWhite);
+  transition: var(--transitionAll);
 }
 
 /* Menu */
@@ -90,26 +127,19 @@ header{
   align-items: center;
   font-size: 1.2rem;
 }/*  */
-.branding a{
-  position: absolute;
-  z-index: 3;
-  top: 20px;
-  left: 10px;
-}
-.branding a:hover{
-  color: var(--mainWhite);
-  transition: var(--transitionAll);
-}
+
 .navbar{
   position: fixed;
-  top: 0;
-  background: transparent;
+  top: 100px;
+  background: var(--mainBlack);
   height: 100px;
   width: 100%;
   display: flex;
   padding-left: 3rem;  
 }
 .scroll{
+  position: fixed;
+  top: 0;
   background: rgba(30, 40, 30, 0.85);
   transition: var(--transitionAll);
 }
@@ -129,8 +159,7 @@ header{
 .navItem{
   padding-right: 2rem;
 }
-.navLink,
-.branding a{
+.navLink{
   color: var(--primaryColor);
   font-size: 1.5rem;
   text-decoration: none;
@@ -345,7 +374,7 @@ header{
   display: flex;
   flex-direction: column;
   text-align: center;
-  transform: translateX(-100%);/* */
+  transform: translateX(-100%);
 }
 .showCart{
   transform: translateX(0);
@@ -753,7 +782,7 @@ footer{
       padding-top: 3rem;
     }
     .navItem{
-      transform: translate3d(600px, 0, 0);
+      transform: translate3d(800px, 0, 0);
       transition: var(--transitionAll);
     }
     .navItem .show{
@@ -783,9 +812,18 @@ footer{
       position: absolute;
       bottom: -104px;
     }
-    footer{
-      width: 100%;
+    .socialIcons{
+      display: none;
+    }
+    .footerMain{
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
+    .copy p{
+      text-align: center;
+    }
+    /* about responsive */
+    
+    /* end about responsive */
 }
