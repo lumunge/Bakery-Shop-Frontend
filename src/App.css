@@ -645,6 +645,24 @@ header{
   background-size: cover;
   border-radius: 50% 50% 50% 50% / 35% 70% 40% 90%;
 }
+.statistics{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 3rem 0;
+  width: 100%;
+  background: var(--mainGrey);
+}
+.statistics h4{
+  color: var(--mainWhite);
+  font-size: 2rem;
+}
+.statistics p{
+  color: var(--primaryColor);
+  font-size: 2rem;
+}
 .community{
   display: flex;
   flex-direction: column;
