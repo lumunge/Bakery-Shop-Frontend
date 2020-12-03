@@ -17,10 +17,9 @@ export default function About(){
 
         <div className="aboutContent">
 
-        <div className="mainAbout">
         <h1 className="motto"><i class="fas fa-quote-left"></i> clean, non-gmo, gluten-free and plant based ingredients</h1>
-            <p>About the company</p>
-            <hr/>
+
+        <div className="mainAbout">
             <div className="about about1">
                 <div className="gifCover">
                 <div className="gif1"></div>
