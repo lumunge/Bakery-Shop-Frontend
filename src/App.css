@@ -120,10 +120,10 @@ header{
 /* MENU OVERLAY STYLING */
 .navbar{
   position: fixed;
-  top: 100px;
-  background: var(--mainBlack);
   height: 100px;
   width: 100%;
+  top: 100px;
+  background: var(--mainBlack);
   display: flex;
   padding-left: 3rem;  
 }
@@ -429,6 +429,7 @@ header{
 
 /* CONTACT FROM STYLING */
 .landing{
+  margin-top: -1.2rem;
   height: 500px;
   background-image: url("./img/contact.jpg");
   background-size: cover;
@@ -454,6 +455,7 @@ header{
   width: 1120px;
 }
 .form{
+  text-align: center;
   flex-grow: 8;
   background-color: var(--mainWhite);
   display: flex;
@@ -491,7 +493,8 @@ header{
 }
 .fa-paper-plane{
   position: relative;
-  left: 110%;
+  left: 50%;
+  padding-left: 1rem;
   bottom: 40px;
   font-size: 2rem;
   color: var(--mainGrey);
@@ -509,6 +512,7 @@ header{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* padding: 0 1rem 0 1rem; */
 }
 .details p{
   font-size: 1.5rem;
@@ -795,11 +799,6 @@ footer{
     .menuNav .navItem:nth-child(4){
       transition-delay: 0.4s;
     }
-    .contactContainer{
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
     .cart{
       width: 100%;
     }
@@ -833,4 +832,21 @@ footer{
      height: 300px;
   }
     /* end about responsive */
+
+    /* contact responsive */
+    .contactContainer{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .fa-paper-plane{
+      position: relative;
+      left: 20%;
+      padding: 1rem 0 1rem 0;
+      bottom: 0px;
+    }
+    .landingContent{
+      margin-bottom: 10rem;
+    }
+    /* end contact responsive */
 }
