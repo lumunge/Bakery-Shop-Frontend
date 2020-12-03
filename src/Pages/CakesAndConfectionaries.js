@@ -5,6 +5,8 @@ import data from '../data.json';
 import Cart from '../Components/Cart';
 import '../App.css';
 import Footer from '../Components/Footer';
+import store from '../store';
+import { Provider } from 'react-redux';
 
 export default class CakesAndConfectionaries extends Component {
     constructor(){
@@ -62,6 +64,7 @@ export default class CakesAndConfectionaries extends Component {
 
     render() {
         return (
+          <Provider store={store}>
             <div>
             <Menu 
               cartItems = {this.state.cartItems}
@@ -85,6 +88,7 @@ export default class CakesAndConfectionaries extends Component {
             />
                 <Footer />
             </div>
+            </Provider>
         )
     }
 }
