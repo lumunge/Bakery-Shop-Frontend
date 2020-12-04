@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Menu from '../Components/Menu';
 import Products from '../Components/Products';
-import data from '../data.json';
 import Cart from '../Components/Cart';
 import '../App.css';
 import Footer from '../Components/Footer';
@@ -12,7 +11,6 @@ export default class CakesAndConfectionaries extends Component {
     constructor(){
         super();
         this.state = {
-            products: data.products,
             cartItems: localStorage.getItem("cartItems")
             ? JSON.parse(localStorage.getItem("cartItems"))
             : [],
@@ -75,8 +73,7 @@ export default class CakesAndConfectionaries extends Component {
                     <button className="bannerBtn">Shop Now </button>
                 </div>
             </div>
-            <Products 
-                products = {this.state.products}
+            <Products
                 addToCart = {this.addToCart}
             />
             <Cart

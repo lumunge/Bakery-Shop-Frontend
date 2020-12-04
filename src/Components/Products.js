@@ -24,7 +24,7 @@ const customStyles = {
 
 class Products extends Component {
         constructor(props){
-            super(props);
+            super(props)
             this.state = {
                 product: null,
             };
@@ -54,12 +54,12 @@ class Products extends Component {
             <div>
                 <div className="products">
                 <h2>Some Delicacies</h2>
+                {!this.props.products ? (
+                                <div> Loading Products </div>
+                            ) : (
                 <div className="production">
                     {this.props.products.map((product) => (
                         <Fade bottom cascade>
-                            {!this.props.products ? (
-                                <div> Loading Products </div>
-                            ):(
                             <article key={product._id} class="product">
                                 <div className="imgContainer">
                                     <a href={"#" + product._id} onClick={() => this.openModal(product)}>
@@ -73,10 +73,10 @@ class Products extends Component {
                                 <h3>{product.title}</h3>
                                 <h4>{formarCurrency(product.price)}</h4>
                             </article>
-                            )}
                             </Fade>
                         ))}
                 </div>
+                )}
                 {product && (
                     <Modal isOpen={true} style={customStyles} onRequestClose={this.closeModal}>
                         <Zoom>
