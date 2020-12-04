@@ -17,10 +17,6 @@ export default class CakesAndConfectionaries extends Component {
     }
     }
 
-    createOrder = (order) => {
-        alert("Need to save data to database " + order.name);
-    }
-
 
     removeFromCart = (product) => {
         const cartItems = this.state.cartItems.slice();
@@ -77,11 +73,7 @@ export default class CakesAndConfectionaries extends Component {
                 addToCart = {this.addToCart}
             />
             <Cart
-                addToCart = {this.addToCart}
                 decreaseCart = {this.decreaseCart}
-                cartItems = {this.state.cartItems}
-                removeFromCart = {this.removeFromCart}
-                createOrder = {this.createOrder}
             />
                 <Footer />
             </div>

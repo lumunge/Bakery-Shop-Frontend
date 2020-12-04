@@ -5,7 +5,8 @@ import Zoom from 'react-reveal/Zoom';
 import Modal from 'react-modal';
 import '../App.css';
 import { connect } from 'react-redux';
-import { fetchProducts } from '../Actions/productActions'
+import { fetchProducts } from '../Actions/productActions';
+import { addToCart } from '../Actions/cartActions';
 
 const customStyles = {
     content : {
@@ -110,4 +111,5 @@ class Products extends Component {
 
 export default connect((state) => ({ products: state.products.filteredItems }), {
     fetchProducts,
+    addToCart,
 })(Products);

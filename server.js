@@ -77,10 +77,11 @@ const Order = mongoose.model(
 );
 
 // ORDER CREATION API
-app.post("api/orders", async (req, res) => {
+app.post("/api/orders", async (req, res) => {
     if(
         !req.body.name ||
         !req.body.email ||
+        !req.body.phone ||
         !req.body.address ||
         !req.body.total ||
         !req.body.cartItems
@@ -93,12 +94,12 @@ app.post("api/orders", async (req, res) => {
     res.send(order);
 });
 
-app.get('api/orders', async (req, res) => {
+app.get('/api/orders', async (req, res) => {
     const orders = await Order.find({});
     res.send(orders);
 });
 
-app.delete('api/orders/:id', async(req, res) => {
+app.delete('/api/orders/:id', async(req, res) => {
     const order = Order.findByIdAndDelete(req.params.id);
     res.send(order);
 });
