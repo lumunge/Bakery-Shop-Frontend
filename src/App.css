@@ -867,4 +867,40 @@ footer{
       margin-bottom: 10rem;
     }
     /* end contact responsive */
+    /* ORDER DETAILS */
+.orderDetails{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.orderDetails li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.orderDetails li div{
+  padding: 10px
+}
+.orderDetails .items{
+  text-align: center;
+  padding: 0;
+}
+.successMessage{
+  color: yellowgreen;
+}
+.orders {
+  width: 100%;
+  padding: 10px;
+}
+tbody > tr:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+td {
+  padding: 5px;
+}
+th {
+  text-align: left;
+}
 }

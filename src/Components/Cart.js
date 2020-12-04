@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import formatCurrency from './utils';
 import Fade from 'react-reveal/Fade';
-import onClickOutside from 'react-onclickoutside';
+import Zoom from 'react-reveal/Zoom';
+import Modal from 'react-modal';
+// import onClickOutside from 'react-onclickoutside';
+import { removeFromCart } from '../Actions/cartActions';
+import { createOrder, clearOrder }  from '../Actions/orderActions';
 import '../App.css';
+import { connect } from 'react-redux';
 
 class Cart extends Component {
     constructor(props){
@@ -11,9 +16,10 @@ class Cart extends Component {
             name: "",
             email: "",
             phone: "",
-            cartItems: [], 
+            address: "",
+            // cartItems: [], 
             showCheckout: false,  
-            showCart: false,         
+            // showCart: false,         
         };
     }
 
@@ -29,10 +35,16 @@ class Cart extends Component {
             name: this.state.name,
             email: this.state.email,
             phone: this.state.phone,
-            cartItems: this.state.cartItems,
+            address: this.state.address,
+            cartItems: this.props.cartItems,
+            total: this.props.cartItems.reduce((a, c) => a + c.price * c.count, 0),
         };
         this.props.createOrder(order);
     };
+
+    closeModal = () => {
+        this.props.clearOrder();
+    }
 
     showCheckout = () => {
         this.setState({
@@ -47,21 +59,23 @@ class Cart extends Component {
         });
     }
 
-    removeFromCart = (product) => {
-        const cartItems = this.state.cartItems.slice();
-        this.setState({
-            cartItems: cartItems.filter((x) => x._id !== product.id),
-        });
-    }
+    // removeFromCart = (product) => {
+    //     const cartItems = this.state.cartItems.slice();
+    //     this.setState({
+    //         cartItems: cartItems.filter((x) => x._id !== product.id),
+    //     });
+    // }
    
     render() {
-        const {cartItems} = this.props;
+        const {cartItems, order} = this.props;
         const {showCart} = this.state;
-        Cart.handleClickOutside = () => {
-            this.setState({
-                showCart: false
-            });
-        }
+
+        // Cart.handleClickOutside = () => {
+        //     this.setState({
+        //         showCart: false
+        //     });
+        // }
+
         return (
             <div>
 
@@ -89,6 +103,55 @@ class Cart extends Component {
                     </div>
                 )}
                 </div>
+
+                {order && (
+                    <Modal isOpen={true} onRequestClose={this.closeModal}>
+                        <Zoom>
+                            <button className="closeModal" onClick={this.closeModal}>x</button>
+                            <div className="orderDetails">
+                                <h3 className="orderSuccess">Your Order has been Placed Successfully</h3>
+                                <h2>Order {order._id}</h2>
+                                <ul>
+                                    <li>
+                                        <div>Name</div>
+                                        <div>{order.name}</div>
+                                    </li>
+                                    <li>
+                                        <div>Email</div>
+                                        <div>{order.email}</div>
+                                    </li>
+                                    <li>
+                                        <div>Phone</div>
+                                        <div>{order.phone}</div>
+                                    </li>
+                                    <li>
+                                        <div>Address</div>
+                                        <div>{order.address}</div>
+                                    </li>
+                                    <li>
+                                        <div>Date</div>
+                                        <div>{order.createdAt}</div>
+                                    </li>
+                                    <li>
+                                        <div>Total</div>
+                                        <div>{formatCurrency(order.total)}</div>
+                                    </li>
+                                    <li>
+                                        <div>Items Ordered</div>
+                                        <div>
+                                            {order.cartItems.map((x) => (
+                                                <div>
+                                                    {x.count} {" x "} {x.title}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </Zoom>
+                    </Modal>
+                )}
+
                 <ul className="cartItems">
                     {cartItems.map(item => (
                             <li key={item._id}>
@@ -136,9 +199,12 @@ class Cart extends Component {
                                 <li>
                                     <input type="number" name="phone" required placeholder="Phone Number..." onChange={this.handleForm} />
                                 </li>
+                                <li>
+                                    <input type="text" name="address" required placeholder="Your Address eg buruburu, kahawa..." onChange={this.handleForm} />
+                                </li>
                                 <br/>
                                 <li>
-                                    <button type="submit" className="button">CheckOut</button>
+                                    <button type="submit" className="">CheckOut</button>
                                 </li>
                             </ul>
                         </form>
@@ -155,9 +221,17 @@ class Cart extends Component {
     }
 }
 
-const clickOutsideConfig = {
-    handleClickOutside: () => Cart.handleClickOutside,
+// const clickOutsideConfig = {
+//     handleClickOutside: () => Cart.handleClickOutside,
 
-};
+// };
 
-export default onClickOutside(Cart, clickOutsideConfig)
+// export default onClickOutside(Cart, clickOutsideConfig);
+
+export default connect(
+    (state) => ({
+        order: state.order.order,
+        cartItems: state.cart.cartItems,
+    }),
+    { removeFromCart, createOrder, clearOrder }
+)(Cart);
