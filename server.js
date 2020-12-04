@@ -54,7 +54,7 @@ const Order = mongoose.model(
         {
             _id: {
                 type: String,
-                defualt: shortid.generate,
+                default: shortid.generate,
             },
             email: String,
             name: String,

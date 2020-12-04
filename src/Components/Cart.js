@@ -9,6 +9,13 @@ import { createOrder, clearOrder }  from '../Actions/orderActions';
 import '../App.css';
 import { connect } from 'react-redux';
 
+const orderModalStyles = {
+    // content: {
+    //     width: '200px',
+    //     height: '200px'
+    // }
+}
+
 class Cart extends Component {
     constructor(props){
         super(props);
@@ -23,7 +30,7 @@ class Cart extends Component {
         };
     }
 
-    handleForm = (e) => {
+    handleInput = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         });
@@ -105,7 +112,8 @@ class Cart extends Component {
                 </div>
 
                 {order && (
-                    <Modal isOpen={true} onRequestClose={this.closeModal}>
+                    <div className="orderModal">
+                    <Modal isOpen={true} onRequestClose={this.closeModal} className="orderModal">
                         <Zoom>
                             <button className="closeModal" onClick={this.closeModal}>x</button>
                             <div className="orderDetails">
@@ -113,43 +121,40 @@ class Cart extends Component {
                                 <h2>Order {order._id}</h2>
                                 <ul>
                                     <li>
-                                        <div>Name</div>
-                                        <div>{order.name}</div>
+                                        <div><span className="orderTitle">Name:</span> <span className="detail">{order.name}</span></div>
                                     </li>
                                     <li>
-                                        <div>Email</div>
-                                        <div>{order.email}</div>
+                                        <div><span className="orderTitle">Email:</span> <span className="detail">{order.email}</span></div>
                                     </li>
                                     <li>
-                                        <div>Phone</div>
-                                        <div>{order.phone}</div>
+                                        <div><span className="orderTitle">Phone:</span>  <span className="detail">{order.phone}</span></div>
                                     </li>
                                     <li>
-                                        <div>Address</div>
-                                        <div>{order.address}</div>
+                                        <div><span className="orderTitle">Address:</span> <span className="detail">{order.address}</span></div>
                                     </li>
                                     <li>
-                                        <div>Date</div>
-                                        <div>{order.createdAt}</div>
+                                        <div><span className="orderTitle">Date:</span> <span className="detail">{order.createdAt}</span></div>
                                     </li>
                                     <li>
-                                        <div>Total</div>
-                                        <div>{formatCurrency(order.total)}</div>
+                                        <div><span className="orderTitle">Totals:</span> <span className="detail">{formatCurrency(order.total)}</span></div>
                                     </li>
                                     <li>
-                                        <div>Items Ordered</div>
+                                        <div><span className="orderTitle">Items Ordered:</span></div>
                                         <div>
+                                        <span className="detail">
                                             {order.cartItems.map((x) => (
                                                 <div>
                                                     {x.count} {" x "} {x.title}
                                                 </div>
                                             ))}
+                                            </span>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                         </Zoom>
                     </Modal>
+                    </div>
                 )}
 
                 <ul className="cartItems">
@@ -190,17 +195,17 @@ class Cart extends Component {
                         <h4>Please Fill Out the Form Below</h4>
                         <form onSubmit={this.createOrder}>
                             <ul className="formContainer">
-                            <li>
-                                    <input type="text" name="name" required placeholder="Your Name..." onChange={this.handleForm} />
+                                <li>
+                                    <input type="text" name="name" required placeholder="Your Name..." onChange={this.handleInput} />
                                 </li>
                                 <li>
-                                    <input type="email" name="email" required placeholder="Email Address..." onChange={this.handleForm} />
+                                    <input type="email" name="email" required placeholder="Email Address..." onChange={this.handleInput} />
                                 </li>
                                 <li>
-                                    <input type="number" name="phone" required placeholder="Phone Number..." onChange={this.handleForm} />
+                                    <input type="number" name="phone" required placeholder="Phone Number..." onChange={this.handleInput} />
                                 </li>
                                 <li>
-                                    <input type="text" name="address" required placeholder="Your Address eg buruburu, kahawa..." onChange={this.handleForm} />
+                                    <input type="text" name="address" required placeholder="Your Address eg buruburu, kahawa..." onChange={this.handleInput} />
                                 </li>
                                 <br/>
                                 <li>
