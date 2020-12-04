@@ -780,6 +780,52 @@ footer{
 .copy p{
   letter-spacing: var(--mainSpacing);
 }
+
+/* ORDER DETAILS */
+.orderModal{
+  position: relative;
+  width: 500px;
+  height: 500px;
+  top: 250px;
+  margin: 0 auto;
+}
+.orderDetails{
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  background-color: var(--mainGrey);
+  /* position: relative; */
+}
+.orderSuccess,
+.orderDetails h2{
+  color: greenyellow;
+  text-align: center;
+  font-weight: 600;
+}
+.orderDetails ul{
+  list-style: none;
+}
+.orderTitle{
+  color: var(--primaryColor);
+  font-size: 1.2rem;
+  padding: 1rem 1rem 0 0;
+}
+.detail{
+  font-size: 1.2rem;
+  letter-spacing: var(--mainSpacing);
+}
+.closeModal{
+  color: var(--primaryColor);
+  padding: .6rem;
+  border: none;
+  background-color: var(--mainGrey);
+  float: right;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+/* ORDER DETAILS END */
+
+
 /* FOOTER STYLING */
 
 @media (max-width:961px) { 
@@ -867,40 +913,4 @@ footer{
       margin-bottom: 10rem;
     }
     /* end contact responsive */
-    /* ORDER DETAILS */
-.orderDetails{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-.orderDetails li{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.orderDetails li div{
-  padding: 10px
-}
-.orderDetails .items{
-  text-align: center;
-  padding: 0;
-}
-.successMessage{
-  color: yellowgreen;
-}
-.orders {
-  width: 100%;
-  padding: 10px;
-}
-tbody > tr:nth-child(odd) {
-  background-color: #f0f0f0;
-}
-td {
-  padding: 5px;
-}
-th {
-  text-align: left;
-}
 }
