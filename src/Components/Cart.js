@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 import Modal from 'react-modal';
 // import onClickOutside from 'react-onclickoutside';
-import { removeFromCart } from '../Actions/cartActions';
+import { removeFromCart, addToCart, decreaseCart } from '../Actions/cartActions';
 import { createOrder, clearOrder }  from '../Actions/orderActions';
 import '../App.css';
 import { connect } from 'react-redux';
@@ -58,7 +58,6 @@ class Cart extends Component {
             showCart: !this.state.showCart
         });
     }
-
    
     render() {
         const {cartItems, order} = this.props;
@@ -166,9 +165,9 @@ class Cart extends Component {
                                 <div>{formatCurrency(item.price)} <span className="multiply">x</span> </div>
                                 </div>
                                 <div className="counter">
-                                <a href="#!" data-id={item.id} onClick={() => this.props.addToCart(item)}><i class="fas fa-chevron-up"></i></a>
+                                <a href="#!" data-id={item._id} onClick={() => this.props.addToCart(item)}><i class="fas fa-chevron-up"></i></a>
                                 <p class="">{ item.count } kgs</p>
-                                <a href="#!" data-id={item.id} onClick={() => this.props.decreaseCart(item)}><i class="fas fa-chevron-down"></i></a> 
+                                <a href="#!" data-id={item._id} onClick={() => this.props.decreaseCart(item)}><i class="fas fa-chevron-down"></i></a> 
                                 </div>
                                 </div>
                                 <hr/>
@@ -235,5 +234,5 @@ export default connect(
         order: state.order.order,
         cartItems: state.cart.cartItems,
     }),
-    { removeFromCart, createOrder, clearOrder }
+    { addToCart, decreaseCart, removeFromCart, createOrder, clearOrder }
 )(Cart);

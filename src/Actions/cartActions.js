@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from '../types';
+import { ADD_TO_CART, REMOVE_FROM_CART, DECREASE_CART } from '../types';
 
 export const addToCart = (product) => (dispatch, getState) => {
     const cartItems = getState().cart.cartItems.slice();
@@ -32,3 +32,24 @@ export const removeFromCart = (product) => (dispatch, getState) => {
         });
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
 };
+
+export const decreaseCart = (product) => (dispatch, getState) => {
+    const cartItems = getState().cart.cartItems.slice();
+    let alreadyExists = false;
+    cartItems.forEach((x) => {
+        if(x._id === product._id){
+            alreadyExists = true;
+            x.count--;
+        }
+    });
+    if(alreadyExists && product.count < 1){
+        cartItems.pop({
+            product
+        });
+    }
+    dispatch({
+        type: DECREASE_CART,
+        payload: { cartItems },
+    });
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+}
