@@ -9,13 +9,6 @@ import { createOrder, clearOrder }  from '../Actions/orderActions';
 import '../App.css';
 import { connect } from 'react-redux';
 
-const orderModalStyles = {
-    // content: {
-    //     width: '200px',
-    //     height: '200px'
-    // }
-}
-
 class Cart extends Component {
     constructor(props){
         super(props);
@@ -66,12 +59,6 @@ class Cart extends Component {
         });
     }
 
-    // removeFromCart = (product) => {
-    //     const cartItems = this.state.cartItems.slice();
-    //     this.setState({
-    //         cartItems: cartItems.filter((x) => x._id !== product.id),
-    //     });
-    // }
    
     render() {
         const {cartItems, order} = this.props;
@@ -157,25 +144,35 @@ class Cart extends Component {
                     </div>
                 )}
 
-                <ul className="cartItems">
+                <ul>
                     {cartItems.map(item => (
-                            <li key={item._id}>
-                                <div>
+                            <li key={item._id} className="cartItems">
+
+                                <div className="cart1">
+                                    <div>
                                     <img src={item.image} alt={item.title} />
+                                    </div>
+                                    <div> 
+                                    <button className="button remove" onClick={() => this.props.removeFromCart(item)}>X</button>
+                                    </div>
                                 </div>
-                                <div>
+
+                                <div className="cart2">
                                 <div className="itemTitle">{item.title}</div>
-                                <div className="right">                          
-                                <div className="money">{formatCurrency(item.price)} x 
+                                </div>
+
+                                <div className="cart3">
+                                <div className="money">
+                                <div>{formatCurrency(item.price)} <span className="multiply">x</span> </div>
+                                </div>
                                 <div className="counter">
                                 <a href="#!" data-id={item.id} onClick={() => this.props.addToCart(item)}><i class="fas fa-chevron-up"></i></a>
-                                <p class="">{ item.count }</p>
+                                <p class="">{ item.count } kgs</p>
                                 <a href="#!" data-id={item.id} onClick={() => this.props.decreaseCart(item)}><i class="fas fa-chevron-down"></i></a> 
                                 </div>
                                 </div>
-                                <button className="button remove" onClick={() => this.props.removeFromCart(item)}>X</button>
-                                </div>
-                                </div>
+                                <hr/>
+
                             </li>
                         ))}
                 </ul>
@@ -209,7 +206,7 @@ class Cart extends Component {
                                 </li>
                                 <br/>
                                 <li>
-                                    <button type="submit" className="">CheckOut</button>
+                                    <button type="submit" className="button primary">CheckOut</button>
                                 </li>
                             </ul>
                         </form>

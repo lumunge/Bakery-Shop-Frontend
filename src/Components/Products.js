@@ -56,7 +56,7 @@ class Products extends Component {
                 <div className="products">
                 <h2>Some Delicacies</h2>
                 {!this.props.products ? (
-                                <div> Loading Products </div>
+                                <div> Some Of Our Best Sellers... </div>
                             ) : (
                 <div className="production">
                     {this.props.products.map((product) => (

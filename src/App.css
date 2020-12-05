@@ -382,11 +382,20 @@ header{
   letter-spacing: var(--mainSpacing);
   margin-bottom: 2rem;
 }
-.cartItems{
+.cart1{
   display: flex;
-  flex-direction: column;
   align-items: center;
-} 
+  justify-content: space-evenly;
+}
+.cart2{
+  text-align: center;
+  padding: 2rem 0;
+}
+.cart3{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 .cartLength {
   position: absolute;
   top: -8px;
@@ -397,28 +406,46 @@ header{
   color: var(--mainWhite);
 }
 .cartItems img{
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 .cartItems .itemTitle{
   color: var(--mainGrey);
   font-size: 1.5rem;
 }
-.right{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
 .money{
   color: var(--mainBlack);
   font-size: 2rem;
 }
+.counter p{
+  color: var(--mainBlack);
+}
+.counter a{
+  position: absolute;
+}
+.fa-chevron-up{
+  position: absolute;
+  top: -20px;
+  right: -8px;
+}
+.fa-chevron-down{
+  position: absolute;
+  top: -20px;
+  right: -8px;
+  padding-top: .5rem;
+}
+.money .multiply{
+  margin-left: 3rem;
+}
 .remove{
-  margin-left: 2rem;
+  margin-left: 1.5rem;
+}
+.remove:hover,
+.primary:hover{
+  color: var(--mainBlack);
 }
 .cartFooter{
-  padding: 1rem;
+  padding-bottom: 2rem;
 }
 .checkOutForm{
   padding: 3rem 0 3rem 0;
@@ -426,6 +453,7 @@ header{
 .checkOutForm h4{
   color: var(--mainBlack);
 }
+/* END CART STYLING */
 
 /* CONTACT FROM STYLING */
 .landing{
@@ -863,9 +891,14 @@ footer{
     .menuNav .navItem:nth-child(4){
       transition-delay: 0.4s;
     }
+    /* cart responsive */
+    .money .multiply{
+      margin: 0;
+    }
     .cart{
       width: 100%;
     }
+    /* end cart responsive */
     .social{
       position: absolute;
       bottom: -104px;
