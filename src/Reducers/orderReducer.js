@@ -1,4 +1,3 @@
-const { act } = require('react-dom/test-utils');
 const { CREATE_ORDER, CLEAR_ORDER } = require('../types');
 
 const orderReducer = (state = {}, action) => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Zoom from 'react-reveal/Zoom';
 import Fade from 'react-reveal/Fade';
 import Bounce from 'react-reveal/Bounce';
@@ -6,10 +6,39 @@ import Slide from 'react-reveal/Slide';
 import Roll from 'react-reveal/Roll';
 import Footer from '../Components/Footer';
 import Menu from '../Components/Menu';
+import { connect } from 'react-redux';
+import { Provider } from 'react-redux';
+import store from '../store';
+import { mailList } from '../Actions/maillistActions';
 
-export default function About(){
-    return(
-        <div>
+
+
+class About extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            email: "",
+        };
+    }
+
+    handleInput = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
+    joinComm = (e) => {
+        e.preventDefault();
+        const client = {
+            email: this.state.email
+        };
+        this.props.joinComm(client)
+    };
+
+    render() {
+        return (
+            <Provider store={store}>
+            <div>
             <Menu />
             <br/>
             <br/>
@@ -114,17 +143,10 @@ export default function About(){
         </div>
         <div className="community">
             <h1>Join Our Community of Fellow Cake Lovers and Receive Free Recepies</h1>
-            <form>
-                <div>
-                    <input type="text" name="name" required placeholder="Your Name..." />
-                </div>
+            <form onSubmit={this.joinComm}>
                 <div>
                     <input type="text" name="email" required placeholder="Email Address..." />
                 </div>
-                <div>
-                    <input type="text" name="number" required placeholder="Phone Number..." />
-                </div>
-                <br/>
                 <div>
                     <button className="aboutButton" type="submit">Submit</button>
                 </div>
@@ -138,5 +160,14 @@ export default function About(){
         </div>
         <Footer/>
         </div>
-    );
+        </Provider>
+        )
+    }
 }
+
+export default connect(
+    (state) => ({
+        client: state.client.client,
+    }),
+    { mailList }
+)(About);

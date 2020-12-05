@@ -17,6 +17,8 @@ class Cart extends Component {
             email: "",
             phone: "",
             address: "",
+            mpesa: "",
+            decoration: "",
             // cartItems: [], 
             showCheckout: false,  
             // showCart: false,         
@@ -36,6 +38,8 @@ class Cart extends Component {
             email: this.state.email,
             phone: this.state.phone,
             address: this.state.address,
+            mpesa: this.state.mpesa,
+            decoration: this.state.decoration,
             cartItems: this.props.cartItems,
             total: this.props.cartItems.reduce((a, c) => a + c.price * c.count, 0),
         };
@@ -119,6 +123,12 @@ class Cart extends Component {
                                         <div><span className="orderTitle">Address:</span> <span className="detail">{order.address}</span></div>
                                     </li>
                                     <li>
+                                        <div><span className="orderTitle">Mpesa Transaction Code:</span> <span className="detail">{order.mpesa}</span></div>
+                                    </li>
+                                    <li>
+                                        <div><span className="orderTitle">Cake Decoration:</span> <span className="detail">{order.decoration}</span></div>
+                                    </li>
+                                    <li>
                                         <div><span className="orderTitle">Date:</span> <span className="detail">{order.createdAt}</span></div>
                                     </li>
                                     <li>
@@ -189,6 +199,7 @@ class Cart extends Component {
                 <Fade right cascade>
                     <div className="checkOutForm">
                         <h4>Please Fill Out the Form Below</h4>
+                        <a href="#!"><i class="far fa-question-circle"></i></a>
                         <form onSubmit={this.createOrder}>
                             <ul className="formContainer">
                                 <li>
@@ -201,7 +212,21 @@ class Cart extends Component {
                                     <input type="number" name="phone" required placeholder="Phone Number..." onChange={this.handleInput} />
                                 </li>
                                 <li>
-                                    <input type="text" name="address" required placeholder="Your Address eg buruburu, kahawa..." onChange={this.handleInput} />
+                                    <select name="address" onChange={this.handleInput}>
+                                        <option value="Roasters">Roasters</option>
+                                        <option value="Garden Estate">Garden Estate</option>
+                                        <option value="TRM">TRM</option>
+                                        <option value="Garden City">Garden City</option>
+                                        <option value="Ngumba">Ngumba</option>
+                                        <option value="Roysambu">Roysambu</option>
+                                        <option value="Alsoaps">Alsoaps</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <input type="text" name="mpesa" required placeholder="Mpesa Transaction Code..." onChange={this.handleInput} />
+                                </li>
+                                <li>
+                                    <textarea rows="2" name="decoration" placeholder="Cake Decoration Text..." onChange={this.handleInput}></textarea>
                                 </li>
                                 <br/>
                                 <li>

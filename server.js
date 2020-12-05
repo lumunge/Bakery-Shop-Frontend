@@ -49,7 +49,7 @@ app.delete("/api/products/:id", async (req, res) => {
 
 // ORDER MODEL
 const Order = mongoose.model(
-    "order",
+    "orders",
     new mongoose.Schema(
         {
             _id: {
@@ -60,6 +60,8 @@ const Order = mongoose.model(
             name: String,
             phone: Number,
             address: String,
+            mpesa: String,
+            decoration: String,
             total: Number,
             cartItems: [
                 {
@@ -83,6 +85,8 @@ app.post("/api/orders", async (req, res) => {
         !req.body.email ||
         !req.body.phone ||
         !req.body.address ||
+        !req.body.mpesa ||
+        !req.body.decoration ||
         !req.body.total ||
         !req.body.cartItems
     ){
@@ -100,10 +104,50 @@ app.get('/api/orders', async (req, res) => {
 });
 
 app.delete('/api/orders/:id', async(req, res) => {
-    const order = Order.findByIdAndDelete(req.params.id);
+    const order = await Order.findByIdAndDelete(req.params.id);
     res.send(order);
 });
+// END ORDER CREATION API
 
+// CLIENT MODEL
+const Client = mongoose.model(
+    "clients",
+    new mongoose.Schema(
+        {
+            _id:{
+                type: String,
+                default: shortid.generate,
+            },
+            email: String,
+        },{
+            timestamps: true,
+        }
+    )
+)
+//COMMUNITY API
+app.post("/api/clients", async(req, res) => {
+    if(
+        !req.body.email
+    ){
+        return res.send({
+            message: "Enter Your email Address"
+        });
+    }
+
+    const client = await Client(req.body).save();
+    res.send(client);
+})
+
+app.get("/api/clients", async(req, res) => {
+    const clients = await Client.find({});
+    res.send(clients);
+})
+
+app.delete("/api/clients/:id", async(req, res) => {
+    const client = await Client.findByIdAndDelete(req.params.id);
+    res.send(client);
+});
+// END COMMUNITY API
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log("Serving @ http://localhost:5000"));
