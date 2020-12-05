@@ -8,3 +8,21 @@ Thursday december 3rd
 #7: collect data from about form
 #6: on clicked checkout
 #7: Add something on the home page
+
+
+MPESA
+MPESA PAYMENT STEPS
+
+
+Send M-PESA Ksh. 5250.00 to Pay Bill Business number 220220. Submit the Confirmation Code below.
+
+    Go to M-PESA on your phone
+    Select Pay Bill option
+    Enter Business no. 220220
+    Leave the Account no. blank
+    Enter the Amount Ksh. 5250.00
+    Enter your M-PESA PIN and Send
+    You will receive a confirmation SMS from M-PESA with a Confirmation Code
+    After you receive the confirmation SMS, enter your phone number and the Confirmation Code
+    Click on Complete
+
