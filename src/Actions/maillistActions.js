@@ -1,12 +1,12 @@
 import { MAIL_LIST } from '../types';
 
-export const mailList = (client) => (dispatch) => {
-    fetch('/api/clients', {
+export const sendMail = (mail) => (dispatch) => {
+    fetch('/api/mailing-list', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(client)
+        body: JSON.stringify(mail)
     }).then((res) => res.json())
     .then((data) => {
         dispatch({

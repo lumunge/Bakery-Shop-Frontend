@@ -12,7 +12,7 @@ const store = createStore(
         products: productReducer,
         cart: cartReducer,
         order: orderReducer,
-        client: maillistReducer
+        mail: maillistReducer
     }),
     initialState,
     composeEnhancer(applyMiddleware(thunk))

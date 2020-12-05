@@ -109,45 +109,43 @@ app.delete('/api/orders/:id', async(req, res) => {
 });
 // END ORDER CREATION API
 
-// CLIENT MODEL
-const Client = mongoose.model(
-    "clients",
+// CLIENTS MODEL
+const MailingList = mongoose.model(
+    "mailing-list",
     new mongoose.Schema(
         {
-            _id:{
+            _id: {
                 type: String,
                 default: shortid.generate,
             },
-            email: String,
-        },{
+            email: String
+        },
+        {
             timestamps: true,
         }
     )
 )
-//COMMUNITY API
-app.post("/api/clients", async(req, res) => {
-    if(
-        !req.body.email
-    ){
+// CLIENTS API
+app.post('/api/mailing-list', async(req, res) => {
+    if(!req.body.email){
         return res.send({
-            message: "Enter Your email Address"
+            message: "Please Enter your Email Address"
         });
     }
-
-    const client = await Client(req.body).save();
-    res.send(client);
-})
-
-app.get("/api/clients", async(req, res) => {
-    const clients = await Client.find({});
-    res.send(clients);
-})
-
-app.delete("/api/clients/:id", async(req, res) => {
-    const client = await Client.findByIdAndDelete(req.params.id);
-    res.send(client);
+    const mail = await MailingList(req.body).save();
+    res.send(mail);
 });
-// END COMMUNITY API
+
+app.get('/api/mailing-list', async(req, res) => {
+    const mail = await MailingList.find({});
+    res.send(mail);
+});
+
+app.delete('/api/mailing-list/:id', async(req, res) => {
+    const mail = await MailingList.findByIdAndDelete(req.params.id);
+    res.send(mail);
+})
+// END CLIENTS API
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log("Serving @ http://localhost:5000"));

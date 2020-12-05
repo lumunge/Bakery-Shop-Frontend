@@ -6,14 +6,10 @@ import Slide from 'react-reveal/Slide';
 import Roll from 'react-reveal/Roll';
 import Footer from '../Components/Footer';
 import Menu from '../Components/Menu';
-import { connect } from 'react-redux';
-import { Provider } from 'react-redux';
-import store from '../store';
-import { mailList } from '../Actions/maillistActions';
+import axios from 'axios';
 
 
-
-class About extends Component {
+export default class About extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -27,17 +23,20 @@ class About extends Component {
         });
     }
 
-    joinComm = (e) => {
+    sendMail = (e) => {
         e.preventDefault();
-        const client = {
-            email: this.state.email
-        };
-        this.props.joinComm(client)
+        axios.post('/api/mailing-list', this.state)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
     };
 
     render() {
         return (
-            <Provider store={store}>
             <div>
             <Menu />
             <br/>
@@ -143,9 +142,9 @@ class About extends Component {
         </div>
         <div className="community">
             <h1>Join Our Community of Fellow Cake Lovers and Receive Free Recepies</h1>
-            <form onSubmit={this.joinComm}>
+            <form onSubmit={this.sendMail}>
                 <div>
-                    <input type="text" name="email" required placeholder="Email Address..." />
+                    <input type="text" name="email" required placeholder="Email Address..." onChange={this.handleInput}/>
                 </div>
                 <div>
                     <button className="aboutButton" type="submit">Submit</button>
@@ -160,14 +159,6 @@ class About extends Component {
         </div>
         <Footer/>
         </div>
-        </Provider>
         )
     }
 }
-
-export default connect(
-    (state) => ({
-        client: state.client.client,
-    }),
-    { mailList }
-)(About);

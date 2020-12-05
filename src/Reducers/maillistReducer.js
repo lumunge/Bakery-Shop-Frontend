@@ -4,7 +4,7 @@ const maillistReducer = (state ={}, action) => {
     switch(action.type){
         case MAIL_LIST:
             return{
-                client: action.payload
+                mail: action.payload
             };
         default:
             return state;
