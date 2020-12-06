@@ -19,7 +19,7 @@ class Cart extends Component {
             mpesa: "",
             decoration: "",
             // cartItems: [], 
-            showCheckout: false,  
+            showCheckout: false, 
             // showCart: false,         
         };
     }
