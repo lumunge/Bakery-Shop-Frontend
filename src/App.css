@@ -519,8 +519,11 @@ header{
   color: var(--mainBlack);
   padding-top: .6rem;
 }
-.fa-paper-plane{
-  position: relative;
+.submitContact{
+  padding: .6rem;
+  background: none;
+  border: none;
+   position: relative;
   left: 50%;
   padding-left: 1rem;
   bottom: 40px;

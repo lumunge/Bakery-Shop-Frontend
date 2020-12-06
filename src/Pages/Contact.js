@@ -2,10 +2,38 @@ import React, { Component } from 'react';
 import Menu from '../Components/Menu';
 import Footer from '../Components/Footer';
 import MapContainer from '../Components/MapContainer';
+import axios from 'axios';
 
 
 
 export default class Contact extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            name: "",
+            phone: "",
+            email: "",
+            message: "",
+        }
+    }
+
+    handleInput = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
+    sendContact = (e) => {
+        e.preventDefault();
+        axios.post('/api/contact-info', this.state)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
     render() {
         return (
             <div>
@@ -29,21 +57,23 @@ export default class Contact extends Component {
             <div className="contactContainer">
                 <div className="form">
                     
-                    <form>
+                    <form onSubmit={this.sendContact}>
                     <h1>Send Us A Message</h1>
                         <div>
-                        <input type="text" placeholder="Your Name..." />
+                        <input type="text" required placeholder="Your Name..." name="name" onChange={this.handleInput} />
                         </div>
                         <div>
-                        <input type="number" placeholder="Phone Number..." />
+                        <input type="number" required placeholder="Phone Number..." name="phone" onChange={this.handleInput} />
                         </div>
                         <div>
-                        <input type="email" placeholder="Email Address..." />
+                        <input type="email" required placeholder="Email Address..." name="email" onChange={this.handleInput} />
                         </div>
                         <div>
-                            <textarea rows="5" cols="28" placeholder="You message here.."></textarea>
+                            <textarea rows="5" cols="28" required placeholder="You message here.." name="message" onChange={this.handleInput}></textarea>
                         </div>
-                        <a href="#!"><i class="fas fa-paper-plane"></i></a>
+                        <div>
+                        <button type="submit" className="submitContact"><i class="fas fa-paper-plane"></i></button>
+                        </div>
                     </form>
                 </div>
                 <div className="contactInfo">

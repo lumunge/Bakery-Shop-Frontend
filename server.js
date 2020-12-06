@@ -149,3 +149,46 @@ app.delete('/api/mailing-list/:id', async(req, res) => {
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log("Serving @ http://localhost:5000"));
+
+// CONTACT US MODEL
+const Contact = mongoose.model(
+    "contacts",
+    new mongoose.Schema(
+        {
+            _id: {
+                type: String,
+                default: shortid.generate,
+            },
+            name: String,
+            phone: Number,
+            email: String,
+        },
+        {
+            timestamps: true
+        }
+    )
+);
+
+//CONTACT API
+app.post('/api/contact-info', async(req, res) => {
+    if(
+        !req.body.name ||
+        !req.body.phone ||
+        !req.body.email
+    ){
+        return res.send({
+            message: "Your contact Information Is Required"
+        });
+    }
+    const contact = await Contact(req.body).save();
+    res.send(contact);
+})
+app.get('/api/contact-info', async(req, res) => {
+    const contact = await Contact.find({});
+    res.send(contact);
+})
+app.delete('/api/contact-info', async(req, res) => {
+    const contact = await Contact.findByIdAndDelete(req.params.id);
+    res.send(contact);
+})
+// END CONTACT API

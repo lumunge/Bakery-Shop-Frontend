@@ -3,7 +3,6 @@ import formatCurrency from './utils';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 import Modal from 'react-modal';
-// import onClickOutside from 'react-onclickoutside';
 import { removeFromCart, addToCart, decreaseCart } from '../Actions/cartActions';
 import { createOrder, clearOrder }  from '../Actions/orderActions';
 import '../App.css';
@@ -247,12 +246,6 @@ class Cart extends Component {
     }
 }
 
-// const clickOutsideConfig = {
-//     handleClickOutside: () => Cart.handleClickOutside,
-
-// };
-
-// export default onClickOutside(Cart, clickOutsideConfig);
 
 export default connect(
     (state) => ({
