@@ -3,6 +3,7 @@ import Menu from '../Components/Menu';
 import Footer from '../Components/Footer';
 import MapContainer from '../Components/MapContainer';
 import axios from 'axios';
+import FlashMessage from 'react-flash-message';
 
 
 
@@ -14,6 +15,7 @@ export default class Contact extends Component {
             phone: "",
             email: "",
             message: "",
+            showMessage: false
         }
     }
 
@@ -24,10 +26,14 @@ export default class Contact extends Component {
     }
 
     sendContact = (e) => {
+        this.setState({ showMessage: false });
         e.preventDefault();
         axios.post('/api/contact-info', this.state)
             .then(res => {
                 console.log(res);
+            })
+            .then(() => {
+                this.setState({ showMessage: true })
             })
             .catch(err => {
                 console.log(err);
@@ -59,6 +65,14 @@ export default class Contact extends Component {
                     
                     <form onSubmit={this.sendContact}>
                     <h1>Send Us A Message</h1>
+                    {
+                    this.state.showMessage &&
+                        <div>
+                            <FlashMessage duration={5000}>
+                                <p className="flashMessage">Success!, Thanks for your feedback.</p>
+                            </FlashMessage>
+                        </div>
+                }
                         <div>
                         <input type="text" required placeholder="Your Name..." name="name" onChange={this.handleInput} />
                         </div>

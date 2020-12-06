@@ -6,14 +6,15 @@ import Slide from 'react-reveal/Slide';
 import Roll from 'react-reveal/Roll';
 import Footer from '../Components/Footer';
 import Menu from '../Components/Menu';
+import FlashMessage from 'react-flash-message';
 import axios from 'axios';
-
 
 export default class About extends Component {
     constructor(props){
         super(props);
         this.state = {
             email: "",
+            showMessage: false
         };
     }
 
@@ -24,10 +25,14 @@ export default class About extends Component {
     }
 
     sendMail = (e) => {
+        this.setState({ showMessage: false });
         e.preventDefault();
         axios.post('/api/mailing-list', this.state)
             .then(res => {
                 console.log(res);
+            })
+            .then(() => {
+                this.setState({ showMessage: true });
             })
             .catch(error => {
                 console.log(error);
@@ -143,6 +148,14 @@ export default class About extends Component {
         <div className="community">
             <h1>Join Our Community of Fellow Cake Lovers and Receive Free Recepies</h1>
             <form onSubmit={this.sendMail}>
+                {
+                    this.state.showMessage &&
+                        <div>
+                            <FlashMessage duration={5000}>
+                                <p className="flashMessage">Success!, We shall Keep you posted</p>
+                            </FlashMessage>
+                        </div>
+                }
                 <div>
                     <input type="text" name="email" required placeholder="Email Address..." onChange={this.handleInput}/>
                 </div>

@@ -567,6 +567,12 @@ header{
   justify-content: center;
   align-items: center;
 }
+.flashMessage{
+  color: yellowgreen;
+  font-weight: 600;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1.2rem;
+}
 
 /* END CONTACT FORM STYLING */
 
