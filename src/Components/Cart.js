@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import formatCurrency from './utils';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
+import axios from 'axios';
 import Modal from 'react-modal';
 import { removeFromCart, addToCart, decreaseCart } from '../Actions/cartActions';
-import { createOrder, clearOrder }  from '../Actions/orderActions';
+import { clearOrder }  from '../Actions/orderActions';
 import '../App.css';
 import { connect } from 'react-redux';
 
@@ -31,18 +32,36 @@ class Cart extends Component {
     }
 
     createOrder = (e) => {
-        e.preventDefault();
+        e.preventDefault()
+
         const order = {
             name: this.state.name,
             email: this.state.email,
             phone: this.state.phone,
             address: this.state.address,
-            mpesa: this.state.mpesa,
             decoration: this.state.decoration,
             cartItems: this.props.cartItems,
             total: this.props.cartItems.reduce((a, c) => a + c.price * c.count, 0),
         };
-        this.props.createOrder(order);
+
+        axios.post('api/orders', order)
+            .then((res) => {
+                console.log(res.data);
+                localStorage.clear('cartItems');
+            }).catch((error) => {
+                console.log(error)
+            });
+
+            this.setState({
+                name: '',
+                email: '',
+                phone: '',
+                address: '',
+                decoration: '',
+                cartItems: '',
+                total: ''
+            })
+
     };
 
     closeModal = () => {
@@ -131,7 +150,7 @@ class Cart extends Component {
                                         <div><span className="orderTitle">Date:</span> <span className="detail">{order.createdAt}</span></div>
                                     </li>
                                     <li>
-                                        <div><span className="orderTitle">Totals:</span> <span className="detail">{formatCurrency(order.total)}</span></div>
+                                        <div><span className="orderTitle">Totals:</span> <span className="detail">{order.total}</span></div>
                                     </li>
                                     <li>
                                         <div><span className="orderTitle">Items Ordered:</span></div>
@@ -252,5 +271,5 @@ export default connect(
         order: state.order.order,
         cartItems: state.cart.cartItems,
     }),
-    { addToCart, decreaseCart, removeFromCart, createOrder, clearOrder }
+    { addToCart, decreaseCart, removeFromCart, clearOrder }
 )(Cart);

@@ -60,7 +60,6 @@ const Order = mongoose.model(
             name: String,
             phone: Number,
             address: String,
-            mpesa: String,
             decoration: String,
             total: Number,
             cartItems: [
@@ -80,20 +79,20 @@ const Order = mongoose.model(
 
 // ORDER CREATION API
 app.post("/api/orders", async (req, res) => {
-    if(
-        !req.body.name ||
-        !req.body.email ||
-        !req.body.phone ||
-        !req.body.address ||
-        !req.body.mpesa ||
-        !req.body.decoration ||
-        !req.body.total ||
-        !req.body.cartItems
-    ){
-        return res.send({
-            message: "Data is required before submission"
-        });
-    }
+    // if(
+    //     !req.body.name ||
+    //     !req.body.email ||
+    //     !req.body.phone ||
+    //     !req.body.address ||
+    //     !req.body.decoration ||
+    //     !req.body.cartItems ||
+    //     !req.body.total
+        
+    // ){
+    //     return res.send({
+    //         message: "Data is required before submission"
+    //     });
+    // }
     const order = await Order(req.body).save();
     res.send(order);
 });
