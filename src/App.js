@@ -5,6 +5,7 @@ import CakesAndConfectionaries from './Pages/CakesAndConfectionaries';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import './App.css';
+import Login from './Admin/Login';
 
 
 export default class App extends Component {
@@ -16,6 +17,7 @@ export default class App extends Component {
       <Route path="/cakes-&-confectionaries" component={CakesAndConfectionaries} />
       <Route path="/about" component={About}/>
       <Route path="/contact" component={Contact} />
+      <Route path="/login" component={Login} />
       </Switch>
       </Router>
     )

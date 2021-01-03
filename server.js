@@ -3,6 +3,8 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const shortid = require('shortid');
+const dotenv = require('dotenv');
+const User = require('./Models/User');
 
 const app = express();
 app.use(bodyParser.json());
@@ -146,8 +148,9 @@ app.delete('/api/mailing-list/:id', async(req, res) => {
 })
 // END CLIENTS API
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => console.log("Serving @ http://localhost:5000"));
+// const port = process.env.PORT || 5000;
+dotenv.config();
+app.listen(process.env.PORT, () => console.log(`Serving @ http://localhost:${process.env.PORT}`));
 
 // CONTACT US MODEL
 const Contact = mongoose.model(
@@ -191,3 +194,24 @@ app.delete('/api/contact-info', async(req, res) => {
     res.send(contact);
 })
 // END CONTACT API
+
+
+//ADMIN REGISTRATION API
+app.post('/api/register', (req, res) => {
+    const { email, password } = req.body;
+    const user = new User({ email, password });
+    user.save((err) => {
+        if(err){
+            console.log("This error Occured ", err);
+            res.status(500).send("Error Occured Registering the New User");
+        }else{
+            res.status(200).send("Welcome To Cakes And Bakeries");
+        }
+    });
+});
+
+app.get('/api/admin', async(req, res) => {
+    const admins = await User.find({});
+    res.send(admins);
+})
+//END ADMIN REG API
