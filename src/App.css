@@ -244,14 +244,17 @@ header{
 .slider-wrapper{
   width: 100%;
   margin-top: 6rem;
-  text-align: center;
   height: 600px;
+  text-align: center;
 }
-.slider-wrapper h1{
+.slider-wrapper p{
+  text-align: center;
   position: absolute;
+  margin: 20rem 15rem;
   z-index: 9999;
-  color: red;
-  font-size: 2rem;
+  color: var(--primaryColor);
+  font-size: 8rem;
+  font-weight: bolder;
 }
 .slider-wrapper > div img{
   width: 100%;
