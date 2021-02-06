@@ -2,10 +2,11 @@
 const express = require('express');
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
 const shortid = require('shortid');
 const dotenv = require('dotenv');
 const User = require('./Models/User');
-
+const withAuth = require('./middleware');
 const app = express();
 app.use(bodyParser.json());
 
@@ -213,5 +214,47 @@ app.post('/api/register', (req, res) => {
 app.get('/api/admin', async(req, res) => {
     const admins = await User.find({});
     res.send(admins);
-})
+});
+
+app.post('/api/authenticate', function(req, res){
+    const {email, password } = req.body;
+    User.findOne({ email }, function(err, user){
+        if(err){
+            console.log(err);
+            res.status(500)
+                .json({
+                    error: "An Internal Error has Occured 001"
+                });
+        }else if(!user){
+            res.status(401)
+                .json({
+                    error: "Incorrect Email Or Password"
+                });
+        }else{
+            user.isCorrectPassword(password, function(err, same){
+                if(err){
+                    res.status(500)
+                    .json({
+                        error: "Internal Error has Ocuurec 002"
+                    });
+                }else if(!same){
+                    res.status(401)
+                        .json({
+                            error: "Incorrect Email Or Password 002"
+                        });
+                }else{
+                    const payload = { email };
+                    const token  = jwt.sign(payload, process.env.SECRET, {
+                        expiresIn: '1h'
+                    });
+                    res.cookie('token', token, { httpOnly: true }).sendStatus(200);
+                }
+            });
+        }
+    });
+});
+
+app.get('/checkToken', withAuth, function(req, res){
+    res.sendStatus(200);
+});
 //END ADMIN REG API

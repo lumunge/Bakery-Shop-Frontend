@@ -240,6 +240,25 @@ header{
   color: var(--mainGrey);
 }
 
+/* SLIDER STYLING */
+.slider-wrapper{
+  width: 100%;
+  margin-top: 6rem;
+  text-align: center;
+  height: 600px;
+}
+.slider-wrapper h1{
+  position: absolute;
+  z-index: 9999;
+  color: red;
+  font-size: 2rem;
+}
+.slider-wrapper > div img{
+  width: 100%;
+  height: 100%;
+}
+/* END SLIDER STYLING */
+
 
 /* PRODUCT CONTAINER STYLING */
 .products{
