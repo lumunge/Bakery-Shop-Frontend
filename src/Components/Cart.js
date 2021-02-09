@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import formatCurrency from './utils';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
-import axios from 'axios';
+// import axios from 'axios';
 import Modal from 'react-modal';
 import { removeFromCart, addToCart, decreaseCart } from '../Actions/cartActions';
-import { clearOrder }  from '../Actions/orderActions';
+import { clearOrder, createOrder}  from '../Actions/orderActions';
 import '../App.css';
 import { connect } from 'react-redux';
 
@@ -32,8 +32,7 @@ class Cart extends Component {
     }
 
     createOrder = (e) => {
-        e.preventDefault()
-
+        e.preventDefault();
         const order = {
             name: this.state.name,
             email: this.state.email,
@@ -44,23 +43,24 @@ class Cart extends Component {
             total: this.props.cartItems.reduce((a, c) => a + c.price * c.count, 0),
         };
 
-        axios.post('api/orders', order)
-            .then((res) => {
-                console.log(res.data);
-                localStorage.clear('cartItems');
-            }).catch((error) => {
-                console.log(error)
-            });
+        // axios.post('api/orders', order)
+        //     .then((res) => {
+        //         console.log(res.data);
+        //         localStorage.clear('cartItems');
+        //     }).catch((error) => {
+        //         console.log(error)
+        //     });
 
-            this.setState({
-                name: '',
-                email: '',
-                phone: '',
-                address: '',
-                decoration: '',
-                cartItems: '',
-                total: ''
-            })
+        //     this.setState({
+        //         name: '',
+        //         email: '',
+        //         phone: '',
+        //         address: '',
+        //         decoration: '',
+        //         cartItems: '',
+        //         total: ''
+        //     })
+        this.props.createOrder(order);
 
     };
 
@@ -248,7 +248,7 @@ class Cart extends Component {
                                 </li>
                                 <br/>
                                 <li>
-                                    <button type="submit" className="button primary">CheckOut</button>
+                                    <button type="submit" className="button primary">CheckOut <i class="fas fa-arrow-right"></i></button>
                                 </li>
                             </ul>
                         </form>
@@ -271,5 +271,5 @@ export default connect(
         order: state.order.order,
         cartItems: state.cart.cartItems,
     }),
-    { addToCart, decreaseCart, removeFromCart, clearOrder }
+    { addToCart, decreaseCart, removeFromCart, createOrder, clearOrder }
 )(Cart);
