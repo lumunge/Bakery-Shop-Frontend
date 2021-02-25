@@ -10,7 +10,13 @@ import '../App.css';
 export default function Slider(){
     return(
         <div className="slider-wrapper">
-            <Carousel showArrows={true} infiniteLoop autoPlay>
+            <Carousel
+             showArrows={true} 
+             infiniteLoop 
+             autoPlay
+             showThumbs={false}
+             showStatus={false}
+             >
                 <div className="slider">
                     <img src={slide1} alt=""/>
                     <p>Moist</p>

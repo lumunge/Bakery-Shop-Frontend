@@ -24,3 +24,13 @@ Send M-PESA Ksh. 5250.00 to Pay Bill Business number 220220. Submit the Confirma
     After you receive the confirmation SMS, enter your phone number and the Confirmation Code
     Click on Complete
 
+
+TODO
+New mpesa page to process the requests and get the confirmation code to fill the form and sumbit efficiently
+
+Feb 10th
+=> Make slider responsive
+=> Make About text smaller and images responsive
+=> Add more products to the about page
+=> Add loading capabilities while fetching for products
+
