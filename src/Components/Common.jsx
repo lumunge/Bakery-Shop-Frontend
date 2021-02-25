@@ -11,7 +11,7 @@ function Common(){
     <Router>
     <Switch>
     <Route path="/" exact component={Home} />
-    <Route path="/cakes-&-confectionaries" component={CakesAndConfectionaries} />
+    <Route path="/cakes-and-confectionaries" component={CakesAndConfectionaries} />
     <Route path="/about" component={About}/>
     <Route path="/contact" component={Contact} />
     </Switch>

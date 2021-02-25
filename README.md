@@ -29,8 +29,15 @@ TODO
 New mpesa page to process the requests and get the confirmation code to fill the form and sumbit efficiently
 
 Feb 10th
-=> Make slider responsive
 => Make About text smaller and images responsive
 => Add more products to the about page
 => Add loading capabilities while fetching for products
+
+
+FEB 25TH
+FINISHING UP:
+=> Make the project mobile-first
+=> Grunt and minify the project
+=> Optimize
+=> Host the project
 
