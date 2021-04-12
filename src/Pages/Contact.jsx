@@ -98,7 +98,7 @@ export default class Contact extends Component {
                     <p><i class="fas fa-envelope-open-text"></i> cakes@yahoo.com </p>
                     </div>
                     <div className="social">
-                        <a href="https://www.facebook.com/CremeofCakes/"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#!"><i class="fab fa-facebook-square"></i></a>
                         <a href="#!"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>

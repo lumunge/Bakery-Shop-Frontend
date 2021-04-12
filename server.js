@@ -206,7 +206,7 @@ app.post('/api/register', (req, res) => {
             console.log("This error Occured ", err);
             res.status(500).send("Error Occured Registering the New User");
         }else{
-            res.status(200).send("Welcome To Cakes And Bakeries");
+            res.status(200).send("Registration Was Successful!!");
         }
     });
 });

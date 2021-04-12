@@ -12,9 +12,9 @@ const customStyles = {
     content : {
       top                   : '50%',
       left                  : '50%',
-      width: '700px',
-      height: '500px',
-      color: 'var(--mainWhite)',
+      width                 : '700px',
+      height                : '500px',
+      color                 : 'var(--mainWhite)',
       right                 : 'auto',
       bottom                : 'auto',
       marginRight           : '-50%',

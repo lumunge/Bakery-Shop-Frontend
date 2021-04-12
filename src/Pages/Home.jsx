@@ -9,7 +9,6 @@ export default function Home(){
     return(
         <div>
         <Menu/>
-        {/* <div className="overlay"></div> */}
         <Slider/>
         <div className="home">
             <h1 className="heading">Creme <span>Cakes and Confectionaries</span></h1>

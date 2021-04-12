@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import formatCurrency from './utils';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
-// import axios from 'axios';
 import Modal from 'react-modal';
 import { removeFromCart, addToCart, decreaseCart } from '../Actions/cartActions';
 import { clearOrder, createOrder}  from '../Actions/orderActions';
@@ -19,9 +18,7 @@ class Cart extends Component {
             address: "",
             mpesa: "",
             decoration: "",
-            // cartItems: [], 
             showCheckout: false, 
-            // showCart: false,         
         };
     }
 
@@ -42,26 +39,7 @@ class Cart extends Component {
             cartItems: this.props.cartItems,
             total: this.props.cartItems.reduce((a, c) => a + c.price * c.count, 0),
         };
-
-        // axios.post('api/orders', order)
-        //     .then((res) => {
-        //         console.log(res.data);
-        //         localStorage.clear('cartItems');
-        //     }).catch((error) => {
-        //         console.log(error)
-        //     });
-
-        //     this.setState({
-        //         name: '',
-        //         email: '',
-        //         phone: '',
-        //         address: '',
-        //         decoration: '',
-        //         cartItems: '',
-        //         total: ''
-        //     })
         this.props.createOrder(order);
-
     };
 
     closeModal = () => {
@@ -84,13 +62,6 @@ class Cart extends Component {
     render() {
         const {cartItems, order} = this.props;
         const {showCart} = this.state;
-
-        // Cart.handleClickOutside = () => {
-        //     this.setState({
-        //         showCart: false
-        //     });
-        // }
-
         return (
             <div>
 

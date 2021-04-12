@@ -16,7 +16,7 @@ export default class Footer extends Component {
                     <div className="footerCol">
                         <h2>Social</h2>
                         <a href="#!">Instagram</a>
-                        <a href="https://www.facebook.com/CremeofCakes/">Facebook</a>
+                        <a href="#!">Facebook</a>
                     </div>
                     <div className="footerCol">
                         <h2>Legal</h2>
@@ -28,7 +28,7 @@ export default class Footer extends Component {
                     </div>
                     </div>
                     <div className="copy">
-                        <p>All Rights Reserved &copy; 2020 cremecakes.com.</p>
+                        <p>All Rights Reserved &copy; 2020 react-bakery</p>
                     </div>
                 </footer>
         );
