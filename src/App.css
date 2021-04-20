@@ -908,6 +908,32 @@ footer{
 }
 /* ORDER DETAILS END */
 
+/* LOGIN STYLING */
+.login{
+  width: 100%;
+  /* min-height: 100vh; */
+  /* max-width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login h1{
+  text-align: center;
+  color: var(--mainBlack);
+  padding: 1rem;
+}
+.login form{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  height: 400px;
+  width: 400px;
+  border: 1px solid var(--mainGrey);
+  border-radius: 10px;
+}
+
+/* END LOGIN STYLING */
 
 /* FOOTER STYLING */
 
@@ -1010,3 +1036,4 @@ footer{
     }
     /* end contact responsive */
 }
+

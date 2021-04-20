@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import {Link} from 'react-router-dom';
+import Menu from '../Components/Menu';
 
 export default class Login extends Component {
     constructor(props){
         super(props)
         this.state = {
+            username: '',
             email: '',
             password: ''
         }
@@ -43,10 +45,28 @@ export default class Login extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.onSubmit}>
-                    <h1>Enter Your Details Below To Login</h1>
+            <>
+            <Menu/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div className="container login">
+                <h1 className="text">Sign Up Here</h1>
+                <form onSubmit={this.onSubmit} className="form">
+                    <small className="text-dark p-4">Fill the form to Sign Up </small>
+                    <br/>
                     <input 
+                    autocomplete="off"
+                    type="name"
+                    name="name"
+                    placeholder="Enter Your Username"
+                    value={this.state.username}
+                    onChange={this.handleInput}
+                    required
+                    />
+                    <input 
+                    autocomplete="off"
                     type="email"
                     name="email"
                     placeholder="Enter Your Email"
@@ -54,7 +74,8 @@ export default class Login extends Component {
                     onChange={this.handleInput}
                     required
                     />
-                    <input 
+                    <input
+                    autocomplete="off" 
                     type="password"
                     name="password"
                     placeholder="Password"
@@ -62,9 +83,14 @@ export default class Login extends Component {
                     onChange={this.handleInput}
                     required
                     />
-                    <input type="submit" value="Submit" />
+                    <div>
+                        <button type="submit" className="btn btn-success mt-4 mr-4"> Submit </button>
+                        <button type="reset" className="btn btn-secondary mt-4"> Cancel </button>
+                        </div>
                 </form>
+                <span>Already Have an Account? <Link to="/login-and-sign-up">Log in</Link></span>
             </div>
+            </>
         )
     }
 }

@@ -18,5 +18,10 @@ export const MenuLinks = [
         title: 'Contact',
         path: '/contact',
         cName: 'navLink'
+    },
+    {
+        title: 'Login',
+        path: '/login-and-sign-up',
+        cName: 'navLink'
     }
 ]
