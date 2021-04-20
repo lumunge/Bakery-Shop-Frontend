@@ -38,8 +38,9 @@ This is an Ecommerce React WebApp for selling pastries
 
 ### SETUP
     * git clone https://github.com/lumungep12/reactBakery.git
-    * npm i 
-    * npm start
+    * npm i - install all dependancies
+    * npm run server - connect to database successfully
+    * npm start - start front-end
 
 
 ## Available Scripts
