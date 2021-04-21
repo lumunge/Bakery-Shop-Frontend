@@ -54,7 +54,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  max-height: 20px;
   width: 100%;
   background-color: var(--mainBlack);
   padding-bottom: 5rem;
@@ -70,7 +70,7 @@ header{
 }
 .socialIcons{
   display: flex;
-  padding-left: 7rem;
+  padding-left: 5rem;
   background-color: var(--mainGrey);
   
 }
@@ -121,9 +121,8 @@ header{
 /* MENU OVERLAY STYLING */
 .navbar{
   position: fixed;
-  height: 100px;
   width: 100%;
-  top: 100px;
+  top: 10px;
   background: var(--mainBlack);
   display: flex;
   padding-left: 3rem;  
@@ -140,7 +139,6 @@ header{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  /* visibility: hidden; */
 } 
 .menuNav{
   display: grid;
@@ -167,7 +165,7 @@ header{
 /* HOME PAGE STYLING */
 .home{
   overflow: hidden;
-  height: 100vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -244,16 +242,7 @@ header{
 /* SLIDER STYLING */
 .slider-wrapper{
   width: 100%;
-  margin-top: 6rem;
-  /* height: 600px; */
-  text-align: center;
-}
-.slider p{
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 2rem;
-  color: var(--primaryColor); */
+  height: 710px;
 }
 .slider-wrapper p{
   position: absolute;

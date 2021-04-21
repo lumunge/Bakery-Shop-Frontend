@@ -67,7 +67,7 @@ export default class About extends Component {
                 </div>
             </Fade>
             <Fade right cascade>
-                <div className="desc">
+                <div className="desc pr-4">
                     <h1>Convenience</h1>
                     <p>text about convenience and how people would prefer creme cakes
                     text about convenience and how people would prefer creme cakes
@@ -86,7 +86,7 @@ export default class About extends Component {
                 </div>
             </Fade>
             <Fade right cascade>
-                <div className="desc">
+                <div className="desc pl-4">
                     <h1>Taste</h1>
                     <p>text about convenience and how people would prefer creme cakes
                     text about convenience and how people would prefer creme cakes
@@ -105,7 +105,7 @@ export default class About extends Component {
             </div>
             </Fade>
             <Fade right cascade>
-                <div className="desc">
+                <div className="desc pr-4">
                     <h1>Warmth</h1>
                     <p>text about convenience and how people would prefer creme cakes
                     text about convenience and how people would prefer creme cakes
@@ -159,6 +159,7 @@ export default class About extends Component {
                 <div>
                     <input type="text" name="email" required placeholder="Email Address..." onChange={this.handleInput}/>
                 </div>
+                <br/>
                 <div>
                     <button className="aboutButton" type="submit">Submit</button>
                 </div>

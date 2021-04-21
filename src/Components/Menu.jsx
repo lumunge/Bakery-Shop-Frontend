@@ -35,7 +35,7 @@ export default class Menu extends Component {
 
     render() {
         return (
-            <div>
+            <>
 
                 <div className="topNav">
 
@@ -45,7 +45,7 @@ export default class Menu extends Component {
 
                 <div className="socialIcons">
                     <a href="#!"><i class="fab fa-facebook-square"></i></a>
-                    <a href="https://www.facebook.com/CremeofCakes/"><i class="fab fa-instagram-square"></i></a>
+                    <a href="#!"><i class="fab fa-instagram-square"></i></a>
                     <a href="#!"><i class="fas fa-envelope-square"></i></a>
                 </div>
 
@@ -77,7 +77,7 @@ export default class Menu extends Component {
                 </nav>
 
             </header>
-            </div>
+            </>
         );
     }
 }
