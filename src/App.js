@@ -6,7 +6,7 @@ import CakesAndConfectionaries from './Pages/CakesAndConfectionaries';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import './App.css';
-import Login from './User/Login';
+import Login from './Admin/Login';
 import Signup from './User/Signup';
 
 
