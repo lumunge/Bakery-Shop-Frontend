@@ -5,7 +5,7 @@ import Bounce from 'react-reveal/Bounce';
 import Slide from 'react-reveal/Slide';
 import Roll from 'react-reveal/Roll';
 import Footer from '../Components/Footer';
-import Menu from '../Components/Menu';
+import Navbar from '../Components/Navbar';
 // import FlashMessage from 'react-flash-message';
 import axios from 'axios';
 
@@ -43,7 +43,7 @@ export default class About extends Component {
     render() {
         return (
             <div>
-            <Menu />
+            <Navbar />
             <br/>
             <br/>
             <br/>

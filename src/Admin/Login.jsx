@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import Menu from '../Components/Menu';
+import Navbar from '../Components/Navbar';
 
 export default class Login extends Component {
     constructor(props){
@@ -45,7 +45,7 @@ export default class Login extends Component {
     render() {
         return (
             <>
-            <Menu/>
+            <Navbar/>
             <br/>
             <br/>
             <br/>

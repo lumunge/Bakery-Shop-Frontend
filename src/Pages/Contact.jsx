@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Menu from '../Components/Menu';
+import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import MapContainer from '../Components/MapContainer';
 import axios from 'axios';
@@ -43,7 +43,7 @@ export default class Contact extends Component {
     render() {
         return (
             <div>
-                <Menu />
+                <Navbar />
             <br/>
             <br/>
             <br/>

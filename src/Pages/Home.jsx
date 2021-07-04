@@ -1,14 +1,14 @@
 import React from 'react';
 import '../App.css';
 import Footer from '../Components/Footer';
-import Menu from '../Components/Menu';
+import Navbar from '../Components/Navbar';
 import Slider from '../Components/Slider';
 
 
 export default function Home(){
     return(
         <div>
-        <Menu/>
+        <Navbar/>
         <Slider/>
         <div className="home">
             <h1 className="heading">Bakery <span>Cakes and Confectionaries</span></h1>

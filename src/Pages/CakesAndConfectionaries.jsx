@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Menu from '../Components/Menu';
+import Navbar from '../Components/Navbar';
 import Products from '../Components/Products';
 import Cart from '../Components/Cart';
 import '../App.css';
@@ -60,7 +60,7 @@ export default class CakesAndConfectionaries extends Component {
         return (
           <Provider store={store}>
             <div>
-            <Menu 
+            <Navbar 
               cartItems = {this.state.cartItems}
             />
             <div className="hero">
