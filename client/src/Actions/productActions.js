@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS } from "../types";
+import { FETCH_PRODUCTS } from "../Constants/types";
 
 export const fetchProducts = () => async (dispatch) => {
 	const res = await fetch("http://locathost:5000/api/products");
