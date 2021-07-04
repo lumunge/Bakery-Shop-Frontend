@@ -1,53 +1,12 @@
-### REACT ECOMMERCE BAKERY APP
+# Getting Started with Create React App
 
-### ABOUT
-This is an Ecommerce React WebApp for selling pastries
-
-### BUILT WITH:
-    * HTML5
-    * CSS3
-    * Bootstrap4
-    * React-bootstrap
-    * Mongoose
-    * Bcrypt
-    * Body-Parser, Cookie-Parser
-    * Google-Maps-React
-    * JsonWebToken
-    * react-modal
-    * Redux, Redux-thunk
-    * Axios
-    * Reactjs 
-
-### FEATURES
-    * Fetch products from API
-    * Display Products with Animations
-    * Authentication
-    * Responsive
-    * SPA
-
-### PROJECT SCREENSHOT
- * Products page
- ![Screenshot_20210412_162455](https://user-images.githubusercontent.com/58906058/114403273-2ac5c000-9b94-11eb-9d29-e0162d1636b0.png)
-
- * Cart Page
-![Screenshot_20210412_162542](https://user-images.githubusercontent.com/58906058/114403307-34e7be80-9b94-11eb-9484-8353203213a0.png)
-
-* Created Order Page
-![Screenshot_20210412_162509](https://user-images.githubusercontent.com/58906058/114403316-3618eb80-9b94-11eb-83df-9784fee3556d.png)
-
-
-### SETUP
-    * git clone https://github.com/lumungep12/reactBakery.git
-    * npm i - install all dependancies
-    * npm run server - connect to database successfully
-    * npm start - start front-end
-
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -55,12 +14,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `yarn build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -70,7 +29,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -106,7 +65,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-

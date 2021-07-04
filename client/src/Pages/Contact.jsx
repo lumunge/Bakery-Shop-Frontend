@@ -3,7 +3,7 @@ import Menu from '../Components/Menu';
 import Footer from '../Components/Footer';
 import MapContainer from '../Components/MapContainer';
 import axios from 'axios';
-import FlashMessage from 'react-flash-message';
+// import FlashMessage from 'react-flash-message';
 
 
 
@@ -68,9 +68,9 @@ export default class Contact extends Component {
                     {
                     this.state.showMessage &&
                         <div>
-                            <FlashMessage duration={5000}>
+                            {/* <FlashMessage duration={5000}>
                                 <p className="flashMessage">Success!, Thanks for your feedback.</p>
-                            </FlashMessage>
+                            </FlashMessage> */}
                         </div>
                 }
                         <div>

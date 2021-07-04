@@ -6,7 +6,7 @@ import Slide from 'react-reveal/Slide';
 import Roll from 'react-reveal/Roll';
 import Footer from '../Components/Footer';
 import Menu from '../Components/Menu';
-import FlashMessage from 'react-flash-message';
+// import FlashMessage from 'react-flash-message';
 import axios from 'axios';
 
 export default class About extends Component {
@@ -151,9 +151,9 @@ export default class About extends Component {
                 {
                     this.state.showMessage &&
                         <div>
-                            <FlashMessage duration={5000}>
+                            {/* <FlashMessage duration={5000}>
                                 <p className="flashMessage">Success!, We shall Keep you posted</p>
-                            </FlashMessage>
+                            </FlashMessage> */}
                         </div>
                 }
                 <div>
