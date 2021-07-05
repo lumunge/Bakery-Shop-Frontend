@@ -5,9 +5,10 @@ import {
 	Grid,
 	Typography,
 	CardContent,
+	Container,
 } from "@material-ui/core";
-import ArrowForward from '@material-ui/icons/ArrowForwardIos';
-import ArrowBack from '@material-ui/icons/ArrowBackIos';
+import ArrowForward from "@material-ui/icons/ArrowForwardIos";
+import ArrowBack from "@material-ui/icons/ArrowBackIos";
 import featuredImg from "../../img/featured-removebg-preview.png";
 import useStyles from "./styles";
 
@@ -90,10 +91,16 @@ const Home = () => {
 							</div>
 						</header>
 						<main className={classes.cakes}>
-                        <div className={ `${classes.icon} ${classes.nextIconLeft}`}>
-                            <ArrowBack className={classes.icon}/>
-                            </div>
-							<Grid container spacing={3} className={classes.cakeItems}>
+							<div
+								className={`${classes.icon} ${classes.nextIconLeft}`}
+							>
+								<ArrowBack className={classes.icon} />
+							</div>
+							<Grid
+								container
+								spacing={3}
+								className={classes.cakeItems}
+							>
 								{cakes.map((cake) => (
 									<Grid item xs={12} md={3}>
 										<Card>
@@ -118,24 +125,33 @@ const Home = () => {
 									</Grid>
 								))}
 							</Grid>
-                            <div className={ `${classes.icon} ${classes.nextIconRight}`}>
-                                <ArrowForward className={classes.icon}/></div>
+							<div
+								className={`${classes.icon} ${classes.nextIconRight}`}
+							>
+								<ArrowForward className={classes.icon} />
+							</div>
 						</main>
 						<footer className={classes.footer}>
 							<Button variant="h6">Availability</Button>
-                            <Typography variant="h4">|</Typography>
+							<Typography variant="h4">|</Typography>
 							<Button variant="h6">Shipping</Button>
 						</footer>
 					</div>
 				</div>
 
-				<div className={classes.aboutHero}>
-					<Typography variant="h4">About This Bakery</Typography>
-					<Typography variant="body2">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Ipsum unde velit deleniti dolore, debitis voluptatibus
-						sapiente vel ipsa quis porro?
-					</Typography>
+				<div className={classes.about}>
+					<div className={classes.aboutIntro}>
+						<div className={classes.aboutIntroText}>
+							<Typography variant="h4" className={classes.text1}>
+								About Bakery Owner
+							</Typography>
+						</div>
+						<Typography variant="h6">
+							Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Ipsum unde velit deleniti dolore, debitis
+							voluptatibus sapiente vel ipsa quis porro?
+						</Typography>
+					</div>
 				</div>
 
 				<div className={classes.aboutText}>

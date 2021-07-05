@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import back from "../../img/986763.jpg";
+import aboutBack from "../../img/aboutBack.jpg";
 
 export default makeStyles(() => ({
 	hero: {
@@ -48,7 +49,7 @@ export default makeStyles(() => ({
 		width: "100%",
 	},
 	icon: {
-		fontSize: "4rem",
+		fontSize: "3rem",
 	},
 	nextIconLeft: {
 		padding: "0 6rem 0 4rem",
@@ -62,5 +63,31 @@ export default makeStyles(() => ({
 		margin: "2rem 0",
 		width: "30%",
 		padding: "1rem 0",
+	},
+	// About Styling
+	about: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+		height: "60vh",
+		backgroundImage: `url(${aboutBack})`,
+		backgroundSize: "cover",
+		backgroundPosition: "center",
+		backgroundAttachment: "fixed",
+	},
+	aboutIntro: {
+		textAlign: "center",
+		padding: "2rem",
+		backgroundColor: "rgba(211, 201, 181, 0.23)",
+	},
+	aboutIntroText: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	text1: {
+		padding: "1rem 0",
+		borderTop: "2px solid #fff",
+		borderBottom: "2px solid #fff",
 	},
 }));
