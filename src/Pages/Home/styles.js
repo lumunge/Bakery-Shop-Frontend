@@ -131,10 +131,8 @@ export default makeStyles(() => ({
 	form: {
 		display: "flex",
 		flexDirection: "column",
-		color: "yellow",
-		"&::placeholder": {
-			color: "red",
-		},
+		alignItems: "center",
+		color: "#fff",
 	},
 	input: {
 		color: "#fff",
@@ -143,5 +141,11 @@ export default makeStyles(() => ({
 	contactFooter: {
 		position: "absolute",
 		bottom: 0,
+		color: "#fff",
+		fontSize: "1.2rem",
+		padding: "2rem 0",
+	},
+	footerLink: {
+		color: "#fff",
 	},
 }));

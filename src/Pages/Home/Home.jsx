@@ -158,7 +158,7 @@ const Home = () => {
 					<br />
 					<Typography variant="caption">April 27 2021</Typography>
 					<br />
-					<Typography variant="body1">
+					<Typography variant="h6">
 						Lorem ipsum dolor sit, amet consectetur adipisicing
 						elit. Repudiandae dolorum hic ab! Expedita accusantium
 						odit quis ut. Sint provident eveniet, laudantium, nisi
@@ -177,7 +177,7 @@ const Home = () => {
 						/>
 						<br />
 						<br />
-						<Typography variant="body1">
+						<Typography variant="h6">
 							Lorem ipsum dolor sit amet consectetur adipisicing
 							elit. Delectus pariatur sit ipsum quas nihil?
 							Dolorem voluptatum consectetur laudantium soluta
@@ -234,7 +234,7 @@ const Home = () => {
 				<></>
 
 				<footer className={classes.contactFooter}>
-					here is footer
+					created by <a href="https://github.com/lumunge" className={classes.footerLink}>lumunge</a>
 				</footer>
 			</div>
 		</div>
