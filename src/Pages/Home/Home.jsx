@@ -6,7 +6,7 @@ import {
 	Typography,
 	CardContent,
 	TextField,
-	TextareaAutosize
+	TextareaAutosize,
 } from "@material-ui/core";
 import ArrowForward from "@material-ui/icons/ArrowForwardIos";
 import ArrowBack from "@material-ui/icons/ArrowBackIos";
@@ -193,46 +193,45 @@ const Home = () => {
 
 			<div className={classes.contactSection}>
 				<div className={classes.form}>
-				<Typography variant="h5">Reach Us Here</Typography>
-				<form>
-					<label htmlFor="">Your Name</label>
-					<br />
-					<TextField
-						color="secondary"
-						variant="standard"
-						InputProps={{
-							className: classes.input,
-						}}
-					/>
-					<br /><br />
-					<label htmlFor="">Email Address</label>
-					<br />
-					<TextField
-						color="secondary"
-						InputProps={{
-							className: classes.input,
-						}}
-					/>
-					<br /><br />
-					<label htmlFor="">Special Requests</label>
-					<br />
-					<TextareaAutosize
-						rowsMin={4}
-						cols={45}
-						InputProps={{
-							className: classes.input,
-						}}
-					
-					/>
-					<br /><br />
-					<Button variant="contained">Send</Button>
+					<Typography variant="h5">Reach Us Here</Typography>
+					<form>
+						<label htmlFor="">Your Name</label>
+						<br />
+						<TextField
+							color="secondary"
+							variant="standard"
+							InputProps={{
+								className: classes.input,
+							}}
+						/>
+						<br />
+						<br />
+						<label htmlFor="">Email Address</label>
+						<br />
+						<TextField
+							color="secondary"
+							InputProps={{
+								className: classes.input,
+							}}
+						/>
+						<br />
+						<br />
+						<label htmlFor="">Special Requests</label>
+						<br />
+						<TextareaAutosize
+							rowsMin={4}
+							cols={45}
+							InputProps={{
+								className: classes.input,
+							}}
+						/>
+						<br />
+						<br />
+						<Button variant="contained">Send</Button>
 					</form>
 				</div>
-				
-					<>
-					
-					</>
-				
+
+				<></>
 
 				<footer className={classes.contactFooter}>
 					here is footer
