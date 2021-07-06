@@ -1,26 +1,29 @@
-import {AppBar, Toolbar, Button} from '@material-ui/core';
-import {Link} from 'react-router-dom';
-import useStyles from './styles';
+import { AppBar, Toolbar, Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import useStyles from "./styles";
+import {NavLinks} from './NavLinks';
 
 const Navbar = () => {
-    
-    const classes = useStyles();
+	const classes = useStyles();
 
-    return(
-        <AppBar className={classes.navbar}>
-        <Toolbar className={classes.links}>
-            <div>
-                <Button component={Link} to="/">Logo</Button>
-            </div>
-                <div>
-                <Button component={Link} to="/shop">Shop</Button>
-                <Button component={Link} to="/about">About</Button>
-                <Button component={Link} to="/contact">Contact</Button>
-                <Button component={Link} to="/login">Login</Button>
-                </div>
-            </Toolbar>
-        </AppBar>
-    )
-}
+	return (
+		<AppBar className={classes.navbar}>
+			<Toolbar className={classes.links}>
+				<div>
+					<Button className={classes.link} component={Link} to="/">
+						Logo
+					</Button>
+				</div>
+				<div>
+                {NavLinks.map((link) => (
+                    <Button className={classes.link} component={Link} to={link.to}>
+                        {link.name}
+                    </Button>
+                ))}
+				</div>
+			</Toolbar>
+		</AppBar>
+	);
+};
 
 export default Navbar;

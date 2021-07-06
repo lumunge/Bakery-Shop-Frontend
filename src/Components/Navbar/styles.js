@@ -8,6 +8,9 @@ export default makeStyles(() => ({
 	links: {
 		display: "flex",
 		justifyContent: "space-around",
-		color: "red",
+	},
+	link: {
+		color: "#fff",
+		fontWeight: "600",
 	},
 }));
