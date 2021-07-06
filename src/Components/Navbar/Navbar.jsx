@@ -1,7 +1,6 @@
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useStyles from "./styles";
-import {NavLinks} from './NavLinks';
 
 const Navbar = () => {
 	const classes = useStyles();
@@ -15,11 +14,15 @@ const Navbar = () => {
 					</Button>
 				</div>
 				<div>
-                {NavLinks.map((link) => (
-                    <Button className={classes.link} component={Link} to={link.to}>
-                        {link.name}
-                    </Button>
-                ))}
+				<Button className={classes.link} component={Link} to="/shop">
+						Shop
+					</Button>
+					<Button href="#about" className={classes.link} >
+						About
+					</Button>
+					<Button href="#contact" className={classes.link}>
+						Contact
+					</Button>
 				</div>
 			</Toolbar>
 		</AppBar>

@@ -137,7 +137,7 @@ const Home = () => {
 				</div>
 			</div>
 
-			<div className={classes.about}>
+			<div id="about" className={classes.about}>
 				<div className={classes.aboutIntro}>
 					<div className={classes.aboutIntroText}>
 						<Typography variant="h4" className={classes.text1}>
@@ -191,7 +191,7 @@ const Home = () => {
 				</footer>
 			</div>
 
-			<div className={classes.contactSection}>
+			<div id="contact" className={classes.contactSection}>
 				<div className={classes.form}>
 					<Typography variant="h5">Reach Us Here</Typography>
 					<form>
