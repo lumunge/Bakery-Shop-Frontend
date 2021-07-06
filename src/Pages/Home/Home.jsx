@@ -5,6 +5,8 @@ import {
 	Grid,
 	Typography,
 	CardContent,
+	TextField,
+	TextareaAutosize
 } from "@material-ui/core";
 import ArrowForward from "@material-ui/icons/ArrowForwardIos";
 import ArrowBack from "@material-ui/icons/ArrowBackIos";
@@ -173,7 +175,8 @@ const Home = () => {
 							src="https://images.unsplash.com/photo-1604551969716-5d6d8f77b241?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWFuJTIwaW4lMjBiYWtlcnl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
 							alt=""
 						/>
-						<br /><br />
+						<br />
+						<br />
 						<Typography variant="body1">
 							Lorem ipsum dolor sit amet consectetur adipisicing
 							elit. Delectus pariatur sit ipsum quas nihil?
@@ -189,11 +192,51 @@ const Home = () => {
 			</div>
 
 			<div className={classes.contactSection}>
+				<div className={classes.form}>
+				<Typography variant="h5">Reach Us Here</Typography>
 				<form>
-					<input type="text" placeholder="name" />
-					<input type="email" placeholder="email" />
-					<input type="text" placeholder="Special Requests" />
-				</form>
+					<label htmlFor="">Your Name</label>
+					<br />
+					<TextField
+						color="secondary"
+						variant="standard"
+						InputProps={{
+							className: classes.input,
+						}}
+					/>
+					<br /><br />
+					<label htmlFor="">Email Address</label>
+					<br />
+					<TextField
+						color="secondary"
+						InputProps={{
+							className: classes.input,
+						}}
+					/>
+					<br /><br />
+					<label htmlFor="">Special Requests</label>
+					<br />
+					<TextareaAutosize
+						rowsMin={4}
+						cols={45}
+						InputProps={{
+							className: classes.input,
+						}}
+					
+					/>
+					<br /><br />
+					<Button variant="contained">Send</Button>
+					</form>
+				</div>
+				
+					<>
+					
+					</>
+				
+
+				<footer className={classes.contactFooter}>
+					here is footer
+				</footer>
 			</div>
 		</div>
 	);

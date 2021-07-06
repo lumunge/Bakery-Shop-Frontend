@@ -118,13 +118,30 @@ export default makeStyles(() => ({
 		padding: "2rem 0",
 	},
 	contactSection: {
-		height: "100vh",
+		height: "80vh",
 		backgroundImage:
-			"url('https://images.unsplash.com/photo-1511018556340-d16986a1c194?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzl8fGJha2VyeSUyMGNvdW50ZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')",
+			"url('https://c1.wallpaperflare.com/preview/566/351/653/bakery-indoors-bread-shelves-farmer-s-bread.jpg')",
 		backgroundSize: "cover",
 		backgroundPosition: "center",
 		display: "flex",
+		flexDirection: "column",
 		alignItems: "center",
 		justifyContent: "center",
+	},
+	form: {
+		display: "flex",
+		flexDirection: "column",
+		color: "yellow",
+		"&::placeholder": {
+			color: "red",
+		},
+	},
+	input: {
+		color: "#fff",
+		fontSize: "1.5rem",
+	},
+	contactFooter: {
+		position: "absolute",
+		bottom: 0,
 	},
 }));

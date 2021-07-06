@@ -5,7 +5,6 @@ import Contact from "./Pages/Contact/Contact";
 import Login from "./Pages/Login/Login";
 import Shop from "./Pages/Shop/Shop";
 import Navbar from "./Components/Navbar/Navbar";
-import Footer from "./Components/Footer/Footer";
 import "./App.css";
 
 const App = () => {
@@ -19,7 +18,6 @@ const App = () => {
 				<Route path="/contact" component={Contact} />
 				<Route path="/login" component={Login} />
 			</Switch>
-			<Footer />
 		</BrowserRouter>
 	);
 };
