@@ -5,7 +5,7 @@ import useStyles from './styles';
 const Footer = () => {
 	const classes = useStyles();
 	return (
-		<Container>
+		<Container className={classes.footer}>
 			<Grid container>
 				<Grid item xs={12} sm={4} className={classes.item}>
 					<h2>Explore</h2>

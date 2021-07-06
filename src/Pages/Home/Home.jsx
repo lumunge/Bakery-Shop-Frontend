@@ -5,7 +5,6 @@ import {
 	Grid,
 	Typography,
 	CardContent,
-	Container,
 } from "@material-ui/core";
 import ArrowForward from "@material-ui/icons/ArrowForwardIos";
 import ArrowBack from "@material-ui/icons/ArrowBackIos";
@@ -59,7 +58,7 @@ const Home = () => {
 	];
 
 	return (
-		<>
+		<div className={classes.main}>
 			<div className={classes.hero}>
 				<div className={classes.heroText}>
 					<Typography variant="h4">
@@ -71,126 +70,132 @@ const Home = () => {
 					<Button variant="contained">Shop Now</Button>
 				</div>
 			</div>
-			<div>
-				<div className={classes.featured}>
-					<div>
-						<img src={featuredImg} alt="featured" />
-					</div>
-					<div className={classes.cakeContainer}>
-						<header className={classes.header}>
-							<div className="">
-								<Typography variant="caption">
-									Small Caption Here
-								</Typography>
-								<Typography variant="h4">
-									Best Sellers
-								</Typography>
-							</div>
-							<div className="">
-								<Button variant="contained">View More</Button>
-							</div>
-						</header>
-						<main className={classes.cakes}>
-							<div
-								className={`${classes.icon} ${classes.nextIconLeft}`}
-							>
-								<ArrowBack className={classes.icon} />
-							</div>
-							<Grid
-								container
-								spacing={3}
-								className={classes.cakeItems}
-							>
-								{cakes.map((cake) => (
-									<Grid item xs={12} md={3}>
-										<Card>
-											<CardMedia
-												className={classes.media}
-												image={cake.image}
-												title={cake.name}
-											/>
-											<CardContent>
-												<Typography variant="body1">
-													{cake.name}
-												</Typography>
-												<Typography
-													variant="body2"
-													color="textSecondary"
-													component="p"
-												>
-													{cake.price}
-												</Typography>
-											</CardContent>
-										</Card>
-									</Grid>
-								))}
-							</Grid>
-							<div
-								className={`${classes.icon} ${classes.nextIconRight}`}
-							>
-								<ArrowForward className={classes.icon} />
-							</div>
-						</main>
-						<footer className={classes.footer}>
-							<Button variant="h6">Availability</Button>
-							<Typography variant="h4">|</Typography>
-							<Button variant="h6">Shipping</Button>
-						</footer>
-					</div>
+			<div className={classes.featured}>
+				<div>
+					<img src={featuredImg} alt="featured" />
 				</div>
-
-				<div className={classes.about}>
-					<div className={classes.aboutIntro}>
-						<div className={classes.aboutIntroText}>
-							<Typography variant="h4" className={classes.text1}>
-								About Bakery Owner
+				<div className={classes.cakeContainer}>
+					<header className={classes.header}>
+						<div className="">
+							<Typography variant="caption">
+								Small Caption Here
 							</Typography>
+							<Typography variant="h4">Best Sellers</Typography>
 						</div>
-						<Typography variant="h6">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Ipsum unde velit deleniti dolore, debitis
-							voluptatibus sapiente vel ipsa quis porro?
-						</Typography>
-					</div>
-				</div>
-
-				<div className={classes.aboutText}>
-					<header>
-						<Typography variant="h5">
-							Lorem ipsum dolor sit amet.
-						</Typography>
-						<Typography variant="caption">April 27 2021</Typography>
-						<Typography variant="body1">
-							Lorem ipsum dolor sit, amet consectetur adipisicing
-							elit. Repudiandae dolorum hic ab! Expedita
-							accusantium odit quis ut. Sint provident eveniet,
-							laudantium, nisi culpa eum porro dolores quo aperiam
-							odit consectetur.
-						</Typography>
-						<Button variant="contained">Read More</Button>
+						<div className="">
+							<Button variant="contained">View More</Button>
+						</div>
 					</header>
-					<main>
-						<Typography variant="h3">
-							Lorem ipsum dolor sit.
-						</Typography>
-						<Typography variant="caption">April 27 2021</Typography>
-						<div>
-							<img src="" alt="" />
+					<main className={classes.cakes}>
+						<div
+							className={`${classes.icon} ${classes.nextIconLeft}`}
+						>
+							<ArrowBack className={classes.icon} />
+						</div>
+						<Grid
+							container
+							spacing={3}
+							className={classes.cakeItems}
+						>
+							{cakes.map((cake) => (
+								<Grid item xs={12} md={3}>
+									<Card>
+										<CardMedia
+											className={classes.media}
+											image={cake.image}
+											title={cake.name}
+										/>
+										<CardContent>
+											<Typography variant="body1">
+												{cake.name}
+											</Typography>
+											<Typography
+												variant="body2"
+												color="textSecondary"
+												component="p"
+											>
+												{cake.price}
+											</Typography>
+										</CardContent>
+									</Card>
+								</Grid>
+							))}
+						</Grid>
+						<div
+							className={`${classes.icon} ${classes.nextIconRight}`}
+						>
+							<ArrowForward className={classes.icon} />
 						</div>
 					</main>
-					<footer>
-						<Button variant="contained">Load More</Button>
+					<footer className={classes.featuredFooter}>
+						<Button variant="h6">Availability</Button>
+						<Typography variant="h4">|</Typography>
+						<Button variant="h6">Shipping</Button>
 					</footer>
 				</div>
-				<div className={classes.contactSection}>
-					<form>
-						<input type="text" placeholder="name" />
-						<input type="email" placeholder="email" />
-						<input type="text" placeholder="Special Requests" />
-					</form>
+			</div>
+
+			<div className={classes.about}>
+				<div className={classes.aboutIntro}>
+					<div className={classes.aboutIntroText}>
+						<Typography variant="h4" className={classes.text1}>
+							About Bakery Owner
+						</Typography>
+					</div>
+					<Typography variant="h6">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Ipsum unde velit deleniti dolore, debitis voluptatibus
+						sapiente vel ipsa quis porro?
+					</Typography>
 				</div>
 			</div>
-		</>
+
+			<div className={classes.aboutText}>
+				<header className={classes.aboutTextHeader}>
+					<Typography variant="h4">I Humbly Receive</Typography>
+					<br />
+					<Typography variant="caption">April 27 2021</Typography>
+					<br />
+					<Typography variant="body1">
+						Lorem ipsum dolor sit, amet consectetur adipisicing
+						elit. Repudiandae dolorum hic ab! Expedita accusantium
+						odit quis ut. Sint provident eveniet, laudantium, nisi
+						culpa eum porro dolores quo aperiam odit consectetur.
+					</Typography>
+					<br />
+					<Button variant="contained">Read More</Button>
+				</header>
+				<main>
+					<Typography variant="h3">Lorem ipsum dolor sit.</Typography>
+					<Typography variant="caption">April 27 2021</Typography>
+					<div>
+						<img
+							src="https://images.unsplash.com/photo-1604551969716-5d6d8f77b241?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWFuJTIwaW4lMjBiYWtlcnl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+							alt=""
+						/>
+						<br /><br />
+						<Typography variant="body1">
+							Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Delectus pariatur sit ipsum quas nihil?
+							Dolorem voluptatum consectetur laudantium soluta
+							libero necessitatibus beatae voluptatem debitis
+							reiciendis, ducimus fugit, nam quasi repellendus.
+						</Typography>
+					</div>
+				</main>
+				<footer className={classes.AboutFooter}>
+					<Button variant="contained">Read More</Button>
+				</footer>
+			</div>
+
+			<div className={classes.contactSection}>
+				<form>
+					<input type="text" placeholder="name" />
+					<input type="email" placeholder="email" />
+					<input type="text" placeholder="Special Requests" />
+				</form>
+			</div>
+		</div>
 	);
 };
 
