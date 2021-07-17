@@ -18,18 +18,21 @@ import CardData from '../../Components/Slider/Data';
 const Home = () => {
 	const classes = useStyles();
 	const [current, setCurrent] = useState(0);
-	const cards = CardData;
-	const length = Object.keys(CardData).length;
+	const [slider, setSlider] = useState([]);
+	const cards = Object.keys(CardData).length;
+	
+
 
 	const nextSlide = () => {
-		setCurrent(current === length - 1 ? 0 : current + 1)
+		setCurrent(current === cards - 1 ? 0 : current + 1)
 	}
 
 	const prevSlide = () => {
-		setCurrent(current === 0 ? length - 1 : current - 1)
+		setCurrent(current === 0 ? cards - 1 : current - 1)
 	}
 
-	console.log(CardData);
+	console.log(current);
+
 
 	if(!Array.isArray(Object.keys(CardData)) || Object.keys(CardData).length <= 0){
 		return null;
