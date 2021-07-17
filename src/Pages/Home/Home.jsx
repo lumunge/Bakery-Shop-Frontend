@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import {
 	Button,
 	CardMedia,
@@ -12,9 +13,28 @@ import ArrowForward from "@material-ui/icons/ArrowForwardIos";
 import ArrowBack from "@material-ui/icons/ArrowBackIos";
 import featuredImg from "../../img/featured-removebg-preview.png";
 import useStyles from "./styles";
+import CardData from '../../Components/Slider/Data';
 
 const Home = () => {
 	const classes = useStyles();
+	const [current, setCurrent] = useState(0);
+	const cards = CardData;
+	const length = Object.keys(CardData).length;
+
+	const nextSlide = () => {
+		setCurrent(current === length - 1 ? 0 : current + 1)
+	}
+
+	const prevSlide = () => {
+		setCurrent(current === 0 ? length - 1 : current - 1)
+	}
+
+	console.log(CardData);
+
+	if(!Array.isArray(Object.keys(CardData)) || Object.keys(CardData).length <= 0){
+		return null;
+	}
+
 
 	const cakes = [
 		{
@@ -92,14 +112,21 @@ const Home = () => {
 						<div
 							className={`${classes.icon} ${classes.nextIconLeft}`}
 						>
-							<ArrowBack className={classes.icon} />
+							<ArrowBack className={classes.icon} onClick={prevSlide}  />
 						</div>
 						<Grid
 							container
 							spacing={3}
 							className={classes.cakeItems}
 						>
-							{cakes.map((cake) => (
+							{/* {cards.map((card, index) => (
+								<div className={index === current ? 'slide active' : 'slide'} key={index}>
+									{index === current && (
+										<h1>{card.name}</h1>
+									)}
+								</div>
+							))} */}
+							{/* {cakes.map((cake) => (
 								<Grid item xs={12} md={3}>
 									<Card>
 										<CardMedia
@@ -121,12 +148,12 @@ const Home = () => {
 										</CardContent>
 									</Card>
 								</Grid>
-							))}
+							))} */}
 						</Grid>
 						<div
 							className={`${classes.icon} ${classes.nextIconRight}`}
 						>
-							<ArrowForward className={classes.icon} />
+							<ArrowForward className={classes.icon} onClick={nextSlide} />
 						</div>
 					</main>
 					<footer className={classes.featuredFooter}>
