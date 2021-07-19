@@ -77,11 +77,10 @@ const Home = () => {
 						<Grid
 							container
 							spacing={3}
-							className={classes.cakeCard}
 						>
 							{slider.map((cake, index) => (
 								<Grid item xs={12} md={3} key={index}>
-									<Card>
+									<Card className={classes.cakeCard}>
 										<CardMedia
 											className={classes.media}
 											image={cake.image}

@@ -31,31 +31,26 @@ export default makeStyles(() => ({
 		flexDirection: "column",
 		alignItems: "center",
 		justifyContent: "center",
-		margin: "0 328px",
 	},
-	slide: {
-		opacity: 0,
-		transitionDuration: ".4s ease",
-	},
-	active: {
-		opacity: 1,
-		transitionDuration: ".4s",
-		transform: "scale(1.08)",
-	},
+
 	header: {
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "space-between",
-		width: "72%",
 	},
 	media: {
 		height: 200,
 	},
+	cakeCard: {
+		height: 350,
+	},
 	cakeContainer: {
+		width: "100%",
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",
 		justifyContent: "center",
+		padding: "0 328px",
 	},
 	cakes: {
 		display: "flex",
