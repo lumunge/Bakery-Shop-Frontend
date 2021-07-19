@@ -18,7 +18,7 @@ import CardData from '../../Components/Slider/Data';
 const Home = () => {
 	const classes = useStyles();
 	const [current, setCurrent] = useState(0);
-	const [slider, setSlider] = useState([]);
+	const [slider, setSlider] = useState(CardData.card1);
 	const cards = Object.keys(CardData).length;
 
 	const cardy = Object.values(CardData);
