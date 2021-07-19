@@ -31,8 +31,17 @@ export default makeStyles(() => ({
 		flexDirection: "column",
 		alignItems: "center",
 		justifyContent: "center",
-		// padding: "4rem 0",
 		margin: "0 328px",
+	},
+	slide: {
+		opacity: 0,
+		transitionDuration: ".4s ease",
+	},
+	cakeCard: {
+		opacity: 1,
+		transition: ".4s eas-in-out",
+		transitionDuration: ".4s ease",
+		transform: "scale(1.08)",
 	},
 	header: {
 		display: "flex",
@@ -62,12 +71,10 @@ export default makeStyles(() => ({
 	nextIconLeft: {
 		left: 0,
 		paddingLeft: "4rem",
-		// padding: "0 6rem 0 4rem",
 	},
 	nextIconRight: {
 		right: 0,
 		paddingRight: "4rem",
-		// margin: "0 4rem 0 6rem",
 	},
 	featuredFooter: {
 		display: "flex",

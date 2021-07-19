@@ -20,19 +20,20 @@ const Home = () => {
 	const [current, setCurrent] = useState(0);
 	const [slider, setSlider] = useState([]);
 	const cards = Object.keys(CardData).length;
-	
+
+	const cardy = Object.values(CardData);
 
 
 	const nextSlide = () => {
 		setCurrent(current === cards - 1 ? 0 : current + 1)
+		setSlider(cardy[current]);
 	}
+
 
 	const prevSlide = () => {
 		setCurrent(current === 0 ? cards - 1 : current - 1)
+		setSlider(cardy[current]);
 	}
-
-	console.log(current);
-
 
 	if(!Array.isArray(Object.keys(CardData)) || Object.keys(CardData).length <= 0){
 		return null;
@@ -76,17 +77,10 @@ const Home = () => {
 						<Grid
 							container
 							spacing={3}
-							className={classes.cakeItems}
+							className={classes.cakeCard}
 						>
-							{/* {cards.map((card, index) => (
-								<div className={index === current ? 'slide active' : 'slide'} key={index}>
-									{index === current && (
-										<h1>{card.name}</h1>
-									)}
-								</div>
-							))} */}
-							{/* {cakes.map((cake) => (
-								<Grid item xs={12} md={3}>
+							{slider.map((cake, index) => (
+								<Grid item xs={12} md={3} key={index}>
 									<Card>
 										<CardMedia
 											className={classes.media}
@@ -107,7 +101,7 @@ const Home = () => {
 										</CardContent>
 									</Card>
 								</Grid>
-							))} */}
+							))}
 						</Grid>
 						<div
 							className={`${classes.icon} ${classes.nextIconRight}`}
