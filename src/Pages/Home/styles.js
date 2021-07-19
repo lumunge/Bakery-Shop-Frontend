@@ -37,10 +37,9 @@ export default makeStyles(() => ({
 		opacity: 0,
 		transitionDuration: ".4s ease",
 	},
-	cakeCard: {
+	active: {
 		opacity: 1,
-		transition: ".4s eas-in-out",
-		transitionDuration: ".4s ease",
+		transitionDuration: ".4s",
 		transform: "scale(1.08)",
 	},
 	header: {

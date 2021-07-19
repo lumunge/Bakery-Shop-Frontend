@@ -39,7 +39,7 @@ export const CardData = {
 		},
 		{
 			image: "https://images.unsplash.com/photo-1566121933407-3c7ccdd26763?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-			name: "Choloclate Cake",
+			name: "Cake",
 			price: "$7878",
 		},
 	],
