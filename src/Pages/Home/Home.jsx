@@ -20,19 +20,18 @@ const Home = () => {
 	const [current, setCurrent] = useState(0);
 	const [slider, setSlider] = useState(CardData.card1);
 	const cards = Object.keys(CardData).length;
-
-	const cardy = Object.values(CardData);
+	const card = Object.values(CardData);
 
 
 	const nextSlide = () => {
 		setCurrent(current === cards - 1 ? 0 : current + 1)
-		setSlider(cardy[current]);
+		setSlider(card[current]);
 	}
 
 
 	const prevSlide = () => {
 		setCurrent(current === 0 ? cards - 1 : current - 1)
-		setSlider(cardy[current]);
+		setSlider(card[current]);
 	}
 
 	if(!Array.isArray(Object.keys(CardData)) || Object.keys(CardData).length <= 0){

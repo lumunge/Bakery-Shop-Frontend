@@ -61,6 +61,9 @@ export default makeStyles(() => ({
 	icon: {
 		position: "absolute",
 		fontSize: "3rem",
+		"&:hover": {
+			cursor: "pointer",
+		},
 	},
 	nextIconLeft: {
 		left: 0,
