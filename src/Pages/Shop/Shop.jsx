@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@material-ui/core";
+import { FormControl, FormControlLabel, Grid, InputLabel, MenuItem, Select, Typography } from "@material-ui/core";
 import conf1 from "../../img/conf1.webp";
 import conf2 from "../../img/conf2.webp";
 import conf3 from "../../img/conf3.webp";
@@ -63,6 +63,38 @@ const Shop = () => {
 			</Grid>
             {/* SHOP CONTAINER */}
             <div className={classes.shopContainer}>
+                <header>
+                    <div>
+                        <Typography variant="h6">Showing all {cakes.length} results</Typography>
+                    </div>
+                    <div>
+                        <div>
+                            <FormControl variant="filled" className={classes.sortForm}>
+                            <InputLabel>Age </InputLabel>
+                                <Select >
+                                    <MenuItem>
+                                        Sort By Popularity
+                                    </MenuItem>
+                                        <MenuItem>
+                                            Sort By average rating
+                                        </MenuItem>
+                                        <MenuItem>
+                                            Sort By Newness
+                                        </MenuItem>
+                                        <MenuItem>
+                                            Sort By Price: low to high
+                                        </MenuItem>
+                                        <MenuItem>
+                                            Sort By Price: high to low
+                                        </MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Search" />
+                        </div>
+                    </div>
+                </header>
 			<Grid container>
                 {cakes.map((cake, index) => (
                     <Grid item xs={3} key={index}>
