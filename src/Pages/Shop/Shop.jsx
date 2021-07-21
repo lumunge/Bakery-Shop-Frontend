@@ -1,7 +1,8 @@
-import { Paper, Grid, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import conf1 from "../../img/conf1.webp";
 import conf2 from "../../img/conf2.webp";
 import conf3 from "../../img/conf3.webp";
+import cakes from './Data';
 import useStyles from "./styles";
 
 const Shop = () => {
@@ -60,16 +61,35 @@ const Shop = () => {
 				</Grid>
                 <hr className={classes.divider} />
 			</Grid>
-			
-			<div>
-				<h1>Cake Shop products</h1>
-			</div>
+            {/* SHOP CONTAINER */}
+            <div className={classes.shopContainer}>
+			<Grid container>
+                {cakes.map((cake, index) => (
+                    <Grid item xs={3} key={index}>
+                        <div>
+                            <div>
+                                <img className={classes.cakeImg} src={cake.image} alt={cake.name} />
+                            </div>
+                            <div>
+                                <Typography variant="h6">{cake.name}</Typography>
+                                <Typography variant="body1">{cake.category}</Typography>
+                                <Typography variant="body2">{cake.price}</Typography>
+                            </div>
+                        </div>
+                    </Grid>
+                ))}
+			</Grid>
+            </div>
+            {/* END SHOP CONTAINER */}
+
+            {/* ADVERT SLIDER */}
 			<div>
 				<h1>advert</h1>
 				<div>
 					<h1>Dotted slider</h1>
 				</div>
 			</div>
+            {/* END ADVERT SLIDER */}
 			<div>
 				<h1>Footer Here</h1>
 			</div>

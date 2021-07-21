@@ -22,4 +22,12 @@ export default makeStyles(() => ({
 	divider: {
 		width: "50%",
 	},
+	shopContainer: {
+		padding: "4rem 0",
+		textAlign: "center",
+	},
+	cakeImg: {
+		width: 300,
+		height: 250,
+	},
 }));
